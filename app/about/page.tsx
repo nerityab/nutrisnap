@@ -31,6 +31,21 @@ export default function AboutPage() {
         photo is enough.
       </PageHero>
 
+      <section className="mx-auto max-w-6xl px-6 pb-16 md:pb-20">
+        <SectionHeading eyebrow="Our team" title="The people behind the plate." />
+        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {team.map((m) => (
+            <li key={m.name} className="flex items-center gap-4 rounded-3xl border bg-card p-6">
+              <Initials name={m.name} />
+              <div>
+                <p className="font-semibold">{m.name}</p>
+                <p className="text-sm text-muted-foreground">{m.role}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section className="bg-secondary">
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
           <SectionHeading eyebrow="Our mission" title="Make nutrition understandable for everyone.">
@@ -51,21 +66,6 @@ export default function AboutPage() {
               </span>
               <h3 className="mt-5 text-lg font-bold">{v.title}</h3>
               <p className="mt-2 leading-relaxed text-muted-foreground">{v.body}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6">
-        <SectionHeading eyebrow="Our team" title="The people behind the plate." />
-        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {team.map((m) => (
-            <li key={m.name} className="flex items-center gap-4 rounded-3xl border bg-card p-6">
-              <Initials name={m.name} />
-              <div>
-                <p className="font-semibold">{m.name}</p>
-                <p className="text-sm text-muted-foreground">{m.role}</p>
-              </div>
             </li>
           ))}
         </ul>
