@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { Initials, PageHero, PageShell } from '@/components/site/page-parts'
+import { StoriesPamphlets } from '@/components/site/pamphlets'
 
 export const metadata: Metadata = {
   title: 'Customer stories · NutriSnap',
@@ -80,6 +81,8 @@ export default function CustomerStoriesPage() {
           ))}
         </ul>
       </section>
+
+      <StoriesPamphlets />
     </PageShell>
   )
 }
