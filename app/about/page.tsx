@@ -14,13 +14,6 @@ const values = [
   { icon: Globe, title: 'Every cuisine counts', body: 'We train on food from all over the world so the app works for every plate.' },
 ]
 
-const timeline = [
-  { year: '2023', body: 'The idea arrives after a founder abandons calorie counting for the fifth time.' },
-  { year: '2024', body: 'Our first vision model is trained on 2 million labelled food images.' },
-  { year: '2025', body: 'Public launch on iOS and Android, reaching 100,000 users in six months.' },
-  { year: '2026', body: 'The AI coach, restaurant mode and family plans arrive.' },
-]
-
 const team = [
   { name: 'Ananya Iyer', role: 'Co-founder & CEO' },
   { name: 'Marcus Chen', role: 'Co-founder & Head of AI' },
@@ -59,18 +52,6 @@ export default function AboutPage() {
             </li>
           ))}
         </ul>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 pb-20 md:pb-24">
-        <SectionHeading eyebrow="Our story" title="From frustration to 1.2 million meals." />
-        <ol className="mt-10 grid gap-5 md:grid-cols-4">
-          {timeline.map((t) => (
-            <li key={t.year} className="border-t-2 border-primary pt-5">
-              <p className="font-display text-3xl font-bold text-coral">{t.year}</p>
-              <p className="mt-2 leading-relaxed text-muted-foreground">{t.body}</p>
-            </li>
-          ))}
-        </ol>
       </section>
 
       <section className="mx-auto max-w-6xl px-6">
