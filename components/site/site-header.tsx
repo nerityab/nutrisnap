@@ -22,24 +22,27 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Logo roll="25bc372" />
         <nav aria-label="Main" className="hidden lg:block">
-          <ul className="flex items-center gap-7 text-[15px] text-muted-foreground">
+          <ul className="flex items-center gap-5 text-[15px] text-muted-foreground xl:gap-7">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="transition-colors hover:text-foreground">
+                <Link
+                  href={link.href}
+                  className="flex flex-col items-center leading-tight whitespace-nowrap transition-colors hover:text-foreground"
+                >
                   {link.label}
-                  {link.roll && <span className="ml-1 text-xs">({link.roll})</span>}
+                  {link.roll && <span className="text-xs">({link.roll})</span>}
                 </Link>
               </li>
             ))}
           </ul>
         </nav>
         <div className="hidden items-center gap-6 lg:flex">
-          <Link href="/contact" className="text-[15px] font-medium hover:text-primary">
+          <Link href="/contact" className="text-[15px] font-medium whitespace-nowrap hover:text-primary">
             Contact
           </Link>
           <Link
             href="/pricing"
-            className="rounded-full bg-primary px-4 py-2 text-[15px] font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+            className="rounded-full bg-primary px-4 py-2 text-[15px] font-semibold whitespace-nowrap text-primary-foreground transition-opacity hover:opacity-90"
           >
             Get the app
           </Link>

@@ -13,10 +13,12 @@ export function Logo({ inverted = false, roll }: { inverted?: boolean; roll?: st
       >
         <Aperture className="size-5" aria-hidden="true" />
       </span>
-      <span className={inverted ? 'text-primary-foreground' : 'text-foreground'}>
-        Nutri<span className={inverted ? 'text-lime' : 'text-coral'}>Snap</span>
+      <span className="flex flex-col leading-tight">
+        <span className={cn('whitespace-nowrap', inverted ? 'text-primary-foreground' : 'text-foreground')}>
+          Nutri<span className={inverted ? 'text-lime' : 'text-coral'}>Snap</span>
+        </span>
+        {roll && <span className="text-xs font-normal text-muted-foreground">({roll})</span>}
       </span>
-      {roll && <span className="text-sm font-normal text-muted-foreground">({roll})</span>}
     </Link>
   )
 }
