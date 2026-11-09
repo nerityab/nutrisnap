@@ -5,13 +5,13 @@ import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { Logo } from './logo'
 
-const navLinks = [
-  { href: '/features', label: 'Features' },
-  { href: '/how-it-works', label: 'How it works' },
+const navLinks: { href: string; label: string; roll?: string }[] = [
+  { href: '/features', label: 'Features', roll: '25bc350' },
+  { href: '/how-it-works', label: 'How it works', roll: '25bc364' },
   { href: '/faq', label: 'FAQ' },
-  { href: '/customer-stories', label: 'Customer stories' },
-  { href: '/pricing', label: 'Pricing' },
-  { href: '/about', label: 'About us' },
+  { href: '/customer-stories', label: 'Customer stories', roll: '25bc339' },
+  { href: '/pricing', label: 'Pricing', roll: '25bc355' },
+  { href: '/about', label: 'About us', roll: '25bc290' },
 ]
 
 export function SiteHeader() {
@@ -20,13 +20,14 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b bg-background/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Logo />
+        <Logo roll="25bc372" />
         <nav aria-label="Main" className="hidden lg:block">
           <ul className="flex items-center gap-7 text-[15px] text-muted-foreground">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link href={link.href} className="transition-colors hover:text-foreground">
                   {link.label}
+                  {link.roll && <span className="ml-1 text-xs">({link.roll})</span>}
                 </Link>
               </li>
             ))}
@@ -61,6 +62,7 @@ export function SiteHeader() {
               <li key={link.href}>
                 <Link href={link.href} className="block py-1 text-muted-foreground hover:text-foreground">
                   {link.label}
+                  {'roll' in link && link.roll && <span className="ml-1 text-xs">({link.roll})</span>}
                 </Link>
               </li>
             ))}

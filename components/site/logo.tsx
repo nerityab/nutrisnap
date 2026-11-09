@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Aperture } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-export function Logo({ inverted = false }: { inverted?: boolean }) {
+export function Logo({ inverted = false, roll }: { inverted?: boolean; roll?: string }) {
   return (
     <Link href="/" className="flex items-center gap-2 font-display text-lg font-bold">
       <span
@@ -16,6 +16,7 @@ export function Logo({ inverted = false }: { inverted?: boolean }) {
       <span className={inverted ? 'text-primary-foreground' : 'text-foreground'}>
         Nutri<span className={inverted ? 'text-lime' : 'text-coral'}>Snap</span>
       </span>
+      {roll && <span className="text-sm font-normal text-muted-foreground">({roll})</span>}
     </Link>
   )
 }
