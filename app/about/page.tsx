@@ -15,10 +15,12 @@ const values = [
 ]
 
 const team = [
-  { name: 'Ananya Iyer', role: 'Co-founder & CEO' },
-  { name: 'Marcus Chen', role: 'Co-founder & Head of AI' },
-  { name: 'Dr. Leila Haddad', role: 'Lead Dietitian' },
-  { name: 'Jonas Weber', role: 'Head of Design' },
+  { name: 'Manas Arora', role: '25BC339' },
+  { name: 'Khushboo Yadav', role: '25BC290' },
+  { name: 'Megha', role: '25BC350' },
+  { name: 'Namandeep Singh', role: '25BC372' },
+  { name: 'Messiah', role: '25BC355' },
+  { name: 'Monika Jain', role: '25BC364' },
 ]
 
 export default function AboutPage() {
@@ -56,7 +58,7 @@ export default function AboutPage() {
 
       <section className="mx-auto max-w-6xl px-6">
         <SectionHeading eyebrow="Our team" title="The people behind the plate." />
-        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {team.map((m) => (
             <li key={m.name} className="flex items-center gap-4 rounded-3xl border bg-card p-6">
               <Initials name={m.name} />
