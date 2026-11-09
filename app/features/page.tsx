@@ -24,10 +24,10 @@ export const metadata: Metadata = {
 }
 
 const stats = [
-  { label: 'Predicted Glucose Volatility', value: 'Low (±18 mg/dL)', color: '#10B981' },
-  { label: 'Digestive Rate Constant', value: '1.4 hrs to Glycogen', color: '#38BDF8' },
-  { label: 'Thermic Effect of Food (TEF)', value: '+112 kcal expended', color: '#FACC15' },
-  { label: 'Macro Bio-Availability', value: '94% Net Absorbed', color: '#FFFFFF' },
+  { label: 'Predicted Glucose Volatility', value: 'Low (±18 mg/dL)', color: '#0b7a4b' },
+  { label: 'Digestive Rate Constant', value: '1.4 hrs to Glycogen', color: '#0369a1' },
+  { label: 'Thermic Effect of Food (TEF)', value: '+112 kcal expended', color: '#a16207' },
+  { label: 'Macro Bio-Availability', value: '94% Net Absorbed', color: '#0f2e1b' },
 ]
 
 const metrics = [
@@ -51,7 +51,7 @@ const features = [
     iconClass: s.iconMint,
     glow: '',
     badge: 'Predictive Bio-Simulation',
-    badgeStyle: pill('16, 185, 129', '#10B981'),
+    badgeStyle: pill('11, 122, 75', '#0b7a4b'),
     title: 'Glycemic Load Anticipation',
     body: 'Forecasts individual blood glucose spikes before ingestion by analyzing fiber-to-starch ratios, fat buffers, and food preparation methods.',
   },
@@ -60,7 +60,7 @@ const features = [
     iconClass: s.iconSky,
     glow: s.glowSky,
     badge: 'Nutrient Timing',
-    badgeStyle: pill('56, 189, 248', '#38BDF8'),
+    badgeStyle: pill('3, 105, 161', '#0369a1'),
     title: 'Sequence-Order Optimizer',
     body: 'Instructs you which items on your plate to eat first (e.g. greens and fats prior to simple starches) to flatten insulin release curves by up to 35%.',
   },
@@ -69,7 +69,7 @@ const features = [
     iconClass: s.iconGold,
     glow: '',
     badge: 'Chrono-Biology',
-    badgeStyle: pill('250, 204, 21', '#FACC15'),
+    badgeStyle: pill('161, 98, 7', '#a16207'),
     title: 'Circadian Clock Sync',
     body: 'Dynamically recalculates digestive efficiency based on solar time, sleep wake cycles, and core body temperature drops to prevent late-night metabolic stalling.',
   },
@@ -78,7 +78,7 @@ const features = [
     iconClass: s.iconMagenta,
     glow: s.glowMagenta,
     badge: 'Protein Synthesis',
-    badgeStyle: pill('217, 70, 239', '#D946EF'),
+    badgeStyle: pill('162, 28, 175', '#a21caf'),
     title: 'Complete Amino Breakdown',
     body: 'Profiles leucine thresholds and essential amino acid bioavailability for muscular protein synthesis (MPS) rather than reporting raw crude nitrogen numbers.',
     telemetry: true,
@@ -163,17 +163,17 @@ export default function FeaturesPage() {
                 >
                   <defs>
                     <linearGradient id="emeraldGlow" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#10B981" stopOpacity="0.25" />
-                      <stop offset="100%" stopColor="#10B981" stopOpacity="0" />
+                      <stop offset="0%" stopColor="#059669" stopOpacity="0.25" />
+                      <stop offset="100%" stopColor="#059669" stopOpacity="0" />
                     </linearGradient>
                   </defs>
                   {[30, 70, 110].map((y) => (
-                    <line key={y} x1="0" y1={y} x2="320" y2={y} stroke="rgba(255,255,255,0.06)" strokeDasharray="3 3" />
+                    <line key={y} x1="0" y1={y} x2="320" y2={y} stroke="rgba(15,46,27,0.12)" strokeDasharray="3 3" />
                   ))}
                   <path
                     className={s.curveLine}
                     d="M10,105 C60,100 90,85 130,42 C160,12 210,35 250,75 C280,100 310,105 320,105"
-                    stroke="#10B981"
+                    stroke="#059669"
                     strokeWidth="3"
                     strokeLinecap="round"
                   />
@@ -182,7 +182,7 @@ export default function FeaturesPage() {
                     fill="url(#emeraldGlow)"
                   />
                 </svg>
-                <div className={s.mono} style={{ display: 'flex', justifyContent: 'space-between', fontSize: 10, color: '#64748B' }}>
+                <div className={s.mono} style={{ display: 'flex', justifyContent: 'space-between', fontSize: 10, color: '#6b7a70' }}>
                   <span>T+00m (Meal Start)</span>
                   <span>T+45m (Anticipated Peak)</span>
                   <span>T+120m (Baseline Recovery)</span>
@@ -243,7 +243,7 @@ export default function FeaturesPage() {
 
           <section className={s.comparisonContainer} aria-labelledby="comparison-title">
             <div className={s.comparisonHead}>
-              <div className={s.pillBadge} style={{ ...pill('56, 189, 248', '#38BDF8'), padding: '6px 16px', marginBottom: 20 }}>
+              <div className={s.pillBadge} style={{ ...pill('3, 105, 161', '#0369a1'), padding: '6px 16px', marginBottom: 20 }}>
                 The Biological Reality
               </div>
               <h2 id="comparison-title" className={s.sectionTitle}>

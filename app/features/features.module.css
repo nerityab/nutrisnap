@@ -1,8 +1,21 @@
+/* Light theme — uses the same palette as the rest of the site (see app/globals.css).
+   Accent colours are darker than the old dark-theme neon so text stays readable on light surfaces. */
 .root {
+  --f-mint: #0b7a4b;
+  --f-mint-fill: #059669;
+  --f-sky: #0369a1;
+  --f-gold: #a16207;
+  --f-magenta: #a21caf;
+  --f-red: #b91c1c;
+  --f-ink: #0f2e1b;
+  --f-body: #4b5d51;
+  --f-faint: #6b7a70;
+  --f-line: rgba(15, 46, 27, 0.1);
+
   font-family: var(--font-jakarta), -apple-system, BlinkMacSystemFont, sans-serif;
-  color: #94A3B8;
+  color: var(--f-body);
   line-height: 1.6;
-  background: #04070E;
+  background: var(--background);
   padding: 32px 16px 64px;
 }
 .root :where(*) { box-sizing: border-box; }
@@ -18,7 +31,8 @@
       display: flex;
       flex-direction: column;
       gap: 36px;
-      background: #060911;
+      background: #f3f0e5;
+      border: 1px solid var(--border);
       border-radius: 36px;
       overflow: hidden;
     }
@@ -30,7 +44,7 @@
       transform: translateX(-50%);
       width: 620px;
       height: 340px;
-      background: radial-gradient(ellipse, rgba(16, 185, 129, 0.2) 0%, rgba(56, 189, 248, 0.08) 45%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(16, 185, 129, 0.16) 0%, rgba(56, 189, 248, 0.07) 45%, transparent 70%);
       filter: blur(80px);
       pointer-events: none;
       z-index: 0;
@@ -75,43 +89,43 @@
     }
 
     .pillMint {
-      background: rgba(16, 185, 129, 0.08);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      color: #10B981;
-      box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+      background: rgba(11, 122, 75, 0.08);
+      border: 1px solid rgba(11, 122, 75, 0.3);
+      color: var(--f-mint);
     }
 
     .pulseDot {
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: #10B981;
+      background: var(--f-mint-fill);
       animation: pulseGlow 2s infinite ease-in-out;
     }
 
     @keyframes pulseGlow {
-      0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 6px #10B981; }
-      50% { transform: scale(1.4); opacity: 0.6; box-shadow: 0 0 14px #10B981; }
+      0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 6px rgba(5, 150, 105, 0.7); }
+      50% { transform: scale(1.4); opacity: 0.6; box-shadow: 0 0 12px rgba(5, 150, 105, 0.5); }
     }
 
     .heroTitle {
       font-size: 44px;
       font-weight: 800;
-      color: #FFFFFF;
+      color: var(--f-ink);
       letter-spacing: -0.03em;
       line-height: 1.15;
       margin-bottom: 16px;
     }
 
     .gradientText {
-      background: linear-gradient(135deg, #FFFFFF 30%, #10B981 100%);
+      background: linear-gradient(135deg, #0f2e1b 30%, #059669 100%);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .heroSub {
       font-size: 16px;
-      color: #94A3B8;
+      color: var(--f-body);
       max-width: 650px;
       margin: 0 auto 36px;
       font-weight: 400;
@@ -121,11 +135,11 @@
     .metabolicPreview {
       width: 100%;
       max-width: 760px;
-      background: #0E1422;
-      border: 1px solid rgba(255, 255, 255, 0.09);
+      background: #ffffff;
+      border: 1px solid var(--border);
       border-radius: 28px;
       padding: 26px;
-      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85);
+      box-shadow: 0 18px 50px rgba(15, 46, 27, 0.1);
       position: relative;
       margin-bottom: 32px;
       display: grid;
@@ -138,9 +152,9 @@
       position: relative;
       border-radius: 18px;
       overflow: hidden;
-      background: #070B13;
+      background: #f6f9ee;
       padding: 20px;
-      border: 1px solid rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(11, 122, 75, 0.25);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -156,7 +170,7 @@
     .curveTag {
       font-size: 11px;
       font-weight: 700;
-      color: #10B981;
+      color: var(--f-mint);
       font-family: var(--font-jetbrains), monospace;
     }
 
@@ -182,8 +196,8 @@
       top: 0;
       bottom: 0;
       width: 2px;
-      background: linear-gradient(180deg, transparent, #38BDF8, transparent);
-      box-shadow: 0 0 12px #38BDF8;
+      background: linear-gradient(180deg, transparent, #0284c7, transparent);
+      box-shadow: 0 0 10px rgba(2, 132, 199, 0.6);
       animation: sweepHorizontal 3.5s infinite linear;
     }
 
@@ -201,8 +215,8 @@
     }
 
     .metabolicStatBox {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: #faf8ef;
+      border: 1px solid var(--f-line);
       border-radius: 14px;
       padding: 12px 14px;
       display: flex;
@@ -212,13 +226,13 @@
 
     .metabolicStatBox span {
       font-size: 12px;
-      color: #94A3B8;
+      color: var(--f-body);
     }
 
     .metabolicStatBox strong {
       font-family: var(--font-jetbrains), monospace;
       font-size: 14px;
-      color: #FFFFFF;
+      color: var(--f-ink);
     }
 
     .impactPill {
@@ -230,8 +244,8 @@
       font-family: var(--font-jetbrains), monospace;
     }
 
-    .impactOptimal { background: rgba(16, 185, 129, 0.15); color: #10B981; }
-    .impactModerate { background: rgba(250, 204, 21, 0.15); color: #FACC15; }
+    .impactOptimal { background: rgba(11, 122, 75, 0.12); color: var(--f-mint); }
+    .impactModerate { background: rgba(161, 98, 7, 0.12); color: var(--f-gold); }
 
     /* 4 METRICS STRIP */
     .metricsBar {
@@ -239,12 +253,11 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 14px;
       width: 100%;
-      background: rgba(13, 19, 31, 0.6);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #ffffff;
+      border: 1px solid var(--border);
       border-radius: 22px;
       padding: 20px 16px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 10px 30px rgba(15, 46, 27, 0.07);
     }
 
     .metricItem {
@@ -258,19 +271,19 @@
       font-family: var(--font-jetbrains), monospace;
       font-size: 24px;
       font-weight: 700;
-      color: #10B981;
+      color: var(--f-mint);
       letter-spacing: -0.02em;
     }
 
-    .metricVal.sky { color: #38BDF8; }
-    .metricVal.gold { color: #FACC15; }
+    .metricVal.sky { color: var(--f-sky); }
+    .metricVal.gold { color: var(--f-gold); }
 
     .metricLabel {
       font-size: 11px;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: #CBD5E1;
+      color: var(--f-body);
       text-align: center;
     }
 
@@ -286,11 +299,11 @@
     }
 
     .bentoCard {
-      background: #0D131F;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #ffffff;
+      border: 1px solid var(--border);
       border-radius: 26px;
       padding: 32px 28px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 10px 30px rgba(15, 46, 27, 0.07);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -306,23 +319,23 @@
       left: 0;
       right: 0;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+      background: linear-gradient(90deg, transparent, rgba(15, 46, 27, 0.12), transparent);
     }
 
     .bentoCard:hover {
       transform: translateY(-4px);
-      border-color: rgba(16, 185, 129, 0.4);
-      box-shadow: 0 24px 60px rgba(16, 185, 129, 0.12), 0 20px 60px rgba(0, 0, 0, 0.9);
+      border-color: rgba(11, 122, 75, 0.45);
+      box-shadow: 0 18px 40px rgba(11, 122, 75, 0.14);
     }
 
     .bentoCard.glowSky:hover {
-      border-color: rgba(56, 189, 248, 0.4);
-      box-shadow: 0 24px 60px rgba(56, 189, 248, 0.12), 0 20px 60px rgba(0, 0, 0, 0.9);
+      border-color: rgba(3, 105, 161, 0.45);
+      box-shadow: 0 18px 40px rgba(3, 105, 161, 0.14);
     }
 
     .bentoCard.glowMagenta:hover {
-      border-color: rgba(217, 70, 239, 0.4);
-      box-shadow: 0 24px 60px rgba(217, 70, 239, 0.12), 0 20px 60px rgba(0, 0, 0, 0.9);
+      border-color: rgba(162, 28, 175, 0.45);
+      box-shadow: 0 18px 40px rgba(162, 28, 175, 0.14);
     }
 
     .cardIcon {
@@ -335,30 +348,30 @@
       margin-bottom: 18px;
     }
 
-    .iconMint { background: rgba(16, 185, 129, 0.12); color: #10B981; }
-    .iconSky { background: rgba(56, 189, 248, 0.12); color: #38BDF8; }
-    .iconGold { background: rgba(250, 204, 21, 0.12); color: #FACC15; }
-    .iconMagenta { background: rgba(217, 70, 239, 0.12); color: #D946EF; }
+    .iconMint { background: rgba(11, 122, 75, 0.1); color: var(--f-mint); }
+    .iconSky { background: rgba(3, 105, 161, 0.1); color: var(--f-sky); }
+    .iconGold { background: rgba(161, 98, 7, 0.1); color: var(--f-gold); }
+    .iconMagenta { background: rgba(162, 28, 175, 0.1); color: var(--f-magenta); }
 
     .cardTitle {
       font-size: 20px;
       font-weight: 700;
-      color: #FFFFFF;
+      color: var(--f-ink);
       margin: 12px 0 8px;
       letter-spacing: -0.01em;
     }
 
     .cardDesc {
       font-size: 14px;
-      color: #94A3B8;
+      color: var(--f-body);
       line-height: 1.6;
     }
 
     /* GLYCEMIC COOLDOWN TELEMETRY */
     .telemetryRow {
       margin-top: 22px;
-      background: rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #f6f9ee;
+      border: 1px solid var(--f-line);
       border-radius: 18px;
       padding: 14px 18px;
       display: flex;
@@ -375,12 +388,12 @@
       font-family: var(--font-jetbrains), monospace;
       font-size: 15px;
       font-weight: 700;
-      color: #10B981;
+      color: var(--f-mint);
     }
 
     .telemetryLbl {
       font-size: 10px;
-      color: #64748B;
+      color: var(--f-faint);
       text-transform: uppercase;
       font-weight: 600;
     }
@@ -388,7 +401,7 @@
     .pulseMeter {
       height: 6px;
       width: 70px;
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(15, 46, 27, 0.1);
       border-radius: 999px;
       overflow: hidden;
       position: relative;
@@ -397,7 +410,7 @@
     .pulseFill {
       height: 100%;
       width: 82%;
-      background: linear-gradient(90deg, #10B981, #38BDF8);
+      background: linear-gradient(90deg, #059669, #0284c7);
       border-radius: 999px;
       animation: loadFill 2.5s infinite ease-in-out;
     }
@@ -423,7 +436,7 @@
     .sectionTitle {
       font-size: 30px;
       font-weight: 800;
-      color: #FFFFFF;
+      color: var(--f-ink);
       letter-spacing: -0.02em;
       margin-top: 10px;
     }
@@ -435,11 +448,11 @@
     }
 
     .matrixCard {
-      background: #0D131F;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #ffffff;
+      border: 1px solid var(--border);
       border-radius: 26px;
       padding: 32px 28px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 10px 30px rgba(15, 46, 27, 0.07);
       position: relative;
       transition: transform 0.25s ease;
     }
@@ -449,9 +462,9 @@
     }
 
     .matrixCard.winner {
-      border: 1px solid rgba(16, 185, 129, 0.35);
-      background: radial-gradient(circle at 100% 0%, rgba(16, 185, 129, 0.09) 0%, #0D131F 70%);
-      box-shadow: 0 0 40px rgba(16, 185, 129, 0.08), 0 20px 60px rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(11, 122, 75, 0.4);
+      background: radial-gradient(circle at 100% 0%, rgba(16, 185, 129, 0.12) 0%, #ffffff 70%);
+      box-shadow: 0 10px 34px rgba(11, 122, 75, 0.12);
     }
 
     .matrixHeader {
@@ -460,7 +473,7 @@
       justify-content: space-between;
       padding-bottom: 18px;
       margin-bottom: 20px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      border-bottom: 1px solid var(--f-line);
     }
 
     .matrixTitle {
@@ -468,8 +481,8 @@
       font-weight: 800;
     }
 
-    .matrixTitle.bad { color: #F87171; }
-    .matrixTitle.good { color: #10B981; }
+    .matrixTitle.bad { color: var(--f-red); }
+    .matrixTitle.good { color: var(--f-mint); }
 
     .matrixTag {
       font-family: var(--font-jetbrains), monospace;
@@ -479,8 +492,8 @@
       border-radius: 999px;
     }
 
-    .badTag { background: rgba(239, 68, 68, 0.12); color: #EF4444; border: 1px solid rgba(239, 68, 68, 0.25); }
-    .goodTag { background: rgba(16, 185, 129, 0.12); color: #10B981; border: 1px solid rgba(16, 185, 129, 0.25); }
+    .badTag { background: rgba(185, 28, 28, 0.08); color: var(--f-red); border: 1px solid rgba(185, 28, 28, 0.25); }
+    .goodTag { background: rgba(11, 122, 75, 0.1); color: var(--f-mint); border: 1px solid rgba(11, 122, 75, 0.3); }
 
     .matrixList {
       list-style: none;
@@ -494,7 +507,7 @@
       align-items: flex-start;
       gap: 12px;
       font-size: 14px;
-      color: #CBD5E1;
+      color: var(--f-body);
       line-height: 1.5;
     }
 
@@ -505,8 +518,8 @@
       flex-shrink: 0;
     }
 
-    .matrixItemIcon.cross { color: #EF4444; }
-    .matrixItemIcon.check { color: #10B981; }
+    .matrixItemIcon.cross { color: var(--f-red); }
+    .matrixItemIcon.check { color: var(--f-mint); }
 
     /* =========================================================
        6. HIGH-CONVERTING BETA CTA BANNER
@@ -514,29 +527,29 @@
     .ctaBanner {
       position: relative;
       z-index: 5;
-      background: radial-gradient(circle at 50% 120%, rgba(16, 185, 129, 0.2) 0%, #0D131F 75%);
-      border: 1px solid rgba(16, 185, 129, 0.4);
+      background: radial-gradient(circle at 50% 120%, rgba(16, 185, 129, 0.2) 0%, #ffffff 75%);
+      border: 1px solid rgba(11, 122, 75, 0.4);
       border-radius: 30px;
       padding: 56px 32px;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      box-shadow: 0 0 60px rgba(16, 185, 129, 0.15), 0 25px 70px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 14px 44px rgba(11, 122, 75, 0.12);
       overflow: hidden;
     }
 
     .ctaTitle {
       font-size: 34px;
       font-weight: 800;
-      color: #FFFFFF;
+      color: var(--f-ink);
       margin: 16px 0 10px;
       letter-spacing: -0.02em;
     }
 
     .ctaDesc {
       font-size: 15px;
-      color: #94A3B8;
+      color: var(--f-body);
       max-width: 580px;
       margin-bottom: 34px;
     }
@@ -561,28 +574,27 @@
     }
 
     .btnEmerald {
-      background: #10B981;
-      color: #04070E;
-      border: 1px solid #10B981;
-      box-shadow: 0 0 25px rgba(16, 185, 129, 0.4);
+      background: var(--primary);
+      color: var(--primary-foreground);
+      border: 1px solid var(--primary);
+      box-shadow: 0 8px 20px rgba(14, 73, 42, 0.25);
     }
 
     .btnEmerald:hover {
-      background: #059669;
-      box-shadow: 0 0 35px rgba(16, 185, 129, 0.6);
+      background: #0b3a22;
+      box-shadow: 0 12px 28px rgba(14, 73, 42, 0.35);
       transform: translateY(-2px);
     }
 
     .btnOutline {
-      background: rgba(255, 255, 255, 0.04);
-      color: #FFFFFF;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(10px);
+      background: #ffffff;
+      color: var(--f-ink);
+      border: 1px solid var(--border);
     }
 
     .btnOutline:hover {
-      background: rgba(255, 255, 255, 0.09);
-      border-color: rgba(255, 255, 255, 0.25);
+      background: #f3f0e5;
+      border-color: rgba(15, 46, 27, 0.3);
       transform: translateY(-2px);
     }
 
@@ -592,7 +604,7 @@
     .nsFooter {
       position: relative;
       z-index: 5;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid var(--f-line);
       padding: 36px 0 16px;
       display: flex;
       flex-direction: column;
@@ -604,7 +616,7 @@
     .footerBrand {
       font-size: 13px;
       font-weight: 700;
-      color: #FFFFFF;
+      color: var(--f-ink);
       letter-spacing: 0.04em;
     }
 
@@ -618,17 +630,17 @@
 
     .footerLinks a {
       font-size: 13px;
-      color: #94A3B8;
+      color: var(--f-body);
       transition: color 0.2s;
     }
 
     .footerLinks a:hover {
-      color: #10B981;
+      color: var(--f-mint);
     }
 
     .footerCopy {
       font-size: 12px;
-      color: #64748B;
+      color: var(--f-faint);
     }
 
     /* RESPONSIVE LAYOUT BREAKPOINTS */
