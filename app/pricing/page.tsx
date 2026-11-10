@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Check, GraduationCap, ShieldCheck, Stethoscope } from 'lucide-react'
+import { PricingPamphlet } from '@/components/site/pamphlets'
 import { PageHero, PageShell, TextLink } from '@/components/site/page-parts'
 import { cn } from '@/lib/utils'
 
@@ -112,6 +113,8 @@ export default function PricingPage() {
           Questions about billing? <TextLink href="/faq">Read the FAQ</TextLink>
         </p>
       </section>
+
+      <PricingPamphlet />
     </PageShell>
   )
 }

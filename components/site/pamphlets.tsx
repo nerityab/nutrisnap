@@ -120,3 +120,78 @@ export function AboutPamphlets() {
     </section>
   )
 }
+
+const pricingPamphlet = {
+  src: '/images/pricing-pamphlet.jpg',
+  width: 1535,
+  height: 1024,
+  alt: 'NutriSnap poster titled "Eat Smart, Without the Guesswork", showing AI food tracking for Indian meals with a phone scanning a plate.',
+}
+
+export function PricingPamphlet() {
+  return (
+    <section aria-labelledby="pricing-pamphlet-heading" className="mx-auto max-w-6xl px-6 pb-20 md:pb-24">
+      <div className="rounded-3xl border bg-card p-6 md:p-10">
+        <h2 id="pricing-pamphlet-heading" className="text-3xl font-bold tracking-tight md:text-4xl">
+          Pamphlet
+        </h2>
+        <div className="mt-8">
+          <Image
+            src={pricingPamphlet.src}
+            alt={pricingPamphlet.alt}
+            width={pricingPamphlet.width}
+            height={pricingPamphlet.height}
+            sizes="(min-width: 1152px) 1056px, 100vw"
+            className="h-auto w-full rounded-2xl border"
+          />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+const featuresPamphlets = [
+  {
+    src: '/images/features-pamphlet-1.jpg',
+    width: 1600,
+    height: 1194,
+    alt: 'NutriSnap bottle-shaped pamphlet with panels on the smart plate revolution, three steps to mindful eating and key benefits.',
+  },
+  {
+    src: '/images/features-pamphlet-2.jpg',
+    width: 1600,
+    height: 892,
+    alt: 'NutriSnap red pamphlet with AI food tracker, our AI story and our favourite features, including a 14-day free trial.',
+  },
+  {
+    src: '/images/features-pamphlet-3.jpg',
+    width: 1600,
+    height: 892,
+    alt: 'NutriSnap green tri-fold pamphlet covering smart dining, intelligent insights, smart features and intelligent eating.',
+  },
+]
+
+export function FeaturesPamphlets() {
+  return (
+    <section aria-labelledby="features-pamphlets-heading" className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+      <div className="rounded-3xl border bg-card p-6 md:p-10">
+        <h2 id="features-pamphlets-heading" className="text-3xl font-bold tracking-tight md:text-4xl">
+          Pamphlets
+        </h2>
+        <div className="mt-8 flex flex-col gap-6">
+          {featuresPamphlets.map((p) => (
+            <Image
+              key={p.src}
+              src={p.src}
+              alt={p.alt}
+              width={p.width}
+              height={p.height}
+              sizes="(min-width: 1152px) 1056px, 100vw"
+              className="h-auto w-full rounded-2xl border"
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

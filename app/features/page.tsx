@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { JetBrains_Mono, Plus_Jakarta_Sans } from 'next/font/google'
 import { Activity, FileText, List, Sun } from 'lucide-react'
+import { FeaturesPamphlets } from '@/components/site/pamphlets'
 import { SiteFooter } from '@/components/site/site-footer'
 import { SiteHeader } from '@/components/site/site-header'
 import s from './features.module.css'
@@ -315,6 +316,8 @@ export default function FeaturesPage() {
               </Link>
             </div>
           </section>
+
+          <FeaturesPamphlets />
 
           <footer className={s.nsFooter}>
             <div className={s.footerBrand}>NUTRISNAP • Advanced Bio-Spectral Food Intelligence</div>
