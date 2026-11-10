@@ -23,13 +23,15 @@ export function AppDemo() {
         </div>
 
         <div className="flex justify-center lg:justify-end">
-          <div className="w-full max-w-[300px] overflow-hidden rounded-[2.5rem] border-8 border-primary bg-primary shadow-2xl">
+          <div className="w-full max-w-[420px] overflow-hidden rounded-[2rem] shadow-2xl">
             <video
               className="block aspect-[9/16] w-full object-cover"
               src="/videos/app-demo.mp4"
-              controls
+              autoPlay
+              muted
+              loop
               playsInline
-              preload="metadata"
+              preload="auto"
               aria-label="NutriSnap app demo: scanning a meal and viewing its nutrition breakdown"
             />
           </div>
