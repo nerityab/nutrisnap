@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { Initials, PageHero, PageShell } from '@/components/site/page-parts'
+import { AppDemo } from '@/components/site/app-demo'
 import { StoriesPamphlets } from '@/components/site/pamphlets'
 
 export const metadata: Metadata = {
@@ -81,6 +82,8 @@ export default function CustomerStoriesPage() {
           ))}
         </ul>
       </section>
+
+      <AppDemo />
 
       <StoriesPamphlets />
     </PageShell>
