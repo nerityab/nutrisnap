@@ -1,3 +1,4 @@
+import { AppDemo } from '@/components/site/app-demo'
 import { Hero } from '@/components/site/hero'
 import { Pamphlets } from '@/components/site/pamphlets'
 import { FinalCta, HowItWorks, RealLife, Stats, Testimonial } from '@/components/site/sections'
@@ -12,6 +13,7 @@ export default function Home() {
         <Hero />
         <Stats />
         <HowItWorks />
+        <AppDemo />
         <RealLife />
         <Testimonial />
         <FinalCta />
