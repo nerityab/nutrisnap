@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { HeartHandshake, FlaskConical, Lock, Globe } from 'lucide-react'
 import { Initials, PageHero, PageShell, SectionHeading } from '@/components/site/page-parts'
+import { AboutPamphlets } from '@/components/site/pamphlets'
 
 export const metadata: Metadata = {
   title: 'About us · NutriSnap',
@@ -70,6 +71,8 @@ export default function AboutPage() {
           ))}
         </ul>
       </section>
+
+      <AboutPamphlets />
     </PageShell>
   )
 }
