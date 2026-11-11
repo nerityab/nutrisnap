@@ -1,14 +1,16 @@
 export function SiteVideo() {
   return (
-    <div className="fixed bottom-4 right-4 z-40 w-72 overflow-hidden rounded-2xl shadow-2xl md:w-80">
-      <video
-        className="block aspect-[9/16] w-full bg-black object-cover"
-        src="/videos/site-video.mp4"
-        controls
-        playsInline
-        preload="metadata"
-        aria-label="NutriSnap video"
-      />
-    </div>
+    <section aria-label="NutriSnap video" className="border-t bg-black">
+      <div className="mx-auto flex max-w-5xl justify-center px-4 py-8 md:py-10">
+        <video
+          className="block aspect-[9/16] h-[70vh] max-h-[560px] w-auto rounded-2xl bg-black shadow-2xl"
+          src="/videos/site-video.mp4"
+          controls
+          playsInline
+          preload="metadata"
+          aria-label="NutriSnap video"
+        />
+      </div>
+    </section>
   )
 }
