@@ -195,3 +195,25 @@ export function FeaturesPamphlets() {
     </section>
   )
 }
+
+export function HowItWorksPamphlet() {
+  return (
+    <section aria-labelledby="how-pamphlet-heading" className="mx-auto max-w-6xl px-6 pb-20 md:pb-24">
+      <div className="rounded-3xl border bg-card p-6 md:p-10">
+        <h2 id="how-pamphlet-heading" className="text-3xl font-bold tracking-tight md:text-4xl">
+          Pamphlet
+        </h2>
+        <div className="mx-auto mt-8 max-w-xl">
+          <Image
+            src="/images/how-it-works-pamphlet.png"
+            alt="NutriSnap pamphlet titled 'Your condition. Your plate.' covering how NutriSnap helps with type 2 diabetes, high blood pressure, heart disease and cholesterol, obesity, anaemia and PCOS, with dietician connection and the app download link."
+            width={794}
+            height={1123}
+            sizes="(min-width: 768px) 576px, 100vw"
+            className="h-auto w-full rounded-2xl border"
+          />
+        </div>
+      </div>
+    </section>
+  )
+}

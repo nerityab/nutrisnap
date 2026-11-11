@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { HowItWorksPamphlet } from '@/components/site/pamphlets'
 import { PageHero, PageShell, SectionHeading, TextLink } from '@/components/site/page-parts'
 
 export const metadata: Metadata = {
@@ -44,6 +45,8 @@ export default function HowItWorksPage() {
           ))}
         </ol>
       </section>
+
+      <HowItWorksPamphlet />
 
       <section className="bg-secondary">
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
