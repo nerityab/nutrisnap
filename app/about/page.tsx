@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SiteVideo } from '@/components/site/site-video'
 import { HeartHandshake, FlaskConical, Lock, Globe } from 'lucide-react'
 import { Initials, PageHero, PageShell, SectionHeading } from '@/components/site/page-parts'
 import { AboutPamphlets } from '@/components/site/pamphlets'
@@ -73,6 +74,8 @@ export default function AboutPage() {
       </section>
 
       <AboutPamphlets />
+
+      <SiteVideo />
     </PageShell>
   )
 }

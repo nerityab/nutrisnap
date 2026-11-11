@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SiteVideo } from '@/components/site/site-video'
 import Image from 'next/image'
 import { Initials, PageHero, PageShell } from '@/components/site/page-parts'
 import { AppDemo } from '@/components/site/app-demo'
@@ -86,6 +87,8 @@ export default function CustomerStoriesPage() {
       <AppDemo />
 
       <StoriesPamphlets />
+
+      <SiteVideo />
     </PageShell>
   )
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SiteVideo } from '@/components/site/site-video'
 import { HowItWorksPamphlet } from '@/components/site/pamphlets'
 import { PageHero, PageShell, SectionHeading, TextLink } from '@/components/site/page-parts'
 
@@ -47,6 +48,8 @@ export default function HowItWorksPage() {
       </section>
 
       <HowItWorksPamphlet />
+
+      <SiteVideo />
 
       <section className="bg-secondary">
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">

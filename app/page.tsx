@@ -1,4 +1,5 @@
 import { Hero } from '@/components/site/hero'
+import { SiteVideo } from '@/components/site/site-video'
 import { Pamphlets } from '@/components/site/pamphlets'
 import { FinalCta, HowItWorks, RealLife, Stats, Testimonial } from '@/components/site/sections'
 import { SiteFooter } from '@/components/site/site-footer'
@@ -16,6 +17,7 @@ export default function Home() {
         <Testimonial />
         <FinalCta />
         <Pamphlets />
+        <SiteVideo />
       </main>
       <SiteFooter />
     </>

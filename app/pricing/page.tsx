@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SiteVideo } from '@/components/site/site-video'
 import Link from 'next/link'
 import { Check, GraduationCap, ShieldCheck, Stethoscope } from 'lucide-react'
 import { PricingPamphlet } from '@/components/site/pamphlets'
@@ -115,6 +116,8 @@ export default function PricingPage() {
       </section>
 
       <PricingPamphlet />
+
+      <SiteVideo />
     </PageShell>
   )
 }

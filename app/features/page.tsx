@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SiteVideo } from '@/components/site/site-video'
 import Link from 'next/link'
 import { JetBrains_Mono, Plus_Jakarta_Sans } from 'next/font/google'
 import { Activity, FileText, List, Sun } from 'lucide-react'
@@ -318,6 +319,8 @@ export default function FeaturesPage() {
           </section>
 
           <FeaturesPamphlets />
+
+          <SiteVideo />
 
           <footer className={s.nsFooter}>
             <div className={s.footerBrand}>NUTRISNAP • Advanced Bio-Spectral Food Intelligence</div>
