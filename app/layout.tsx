@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Bricolage_Grotesque, Inter } from 'next/font/google'
+import { SiteVideo } from '@/components/site/site-video'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -36,6 +37,7 @@ export default function RootLayout({
           Skip to content
         </a>
         {children}
+        <SiteVideo />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
