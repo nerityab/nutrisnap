@@ -2,8 +2,10 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { ChevronDown, Menu, X } from 'lucide-react'
 import { Logo } from './logo'
+
+const howItWorksSubLinks = [{ href: '/how-it-works/faq', label: 'FAQ' }]
 
 const navLinks: { href: string; label: string; roll?: string }[] = [
   { href: '/features', label: 'Features', roll: '25bc350' },
@@ -22,17 +24,51 @@ export function SiteHeader() {
         <Logo roll="25bc372" />
         <nav aria-label="Main" className="hidden lg:block">
           <ul className="flex items-center gap-5 text-[15px] text-muted-foreground xl:gap-7">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="flex flex-col items-center leading-tight whitespace-nowrap transition-colors hover:text-foreground"
-                >
-                  {link.label}
-                  {link.roll && <span className="text-xs">({link.roll})</span>}
-                </Link>
-              </li>
-            ))}
+            {navLinks.map((link) =>
+              link.href === '/how-it-works' ? (
+                <li key={link.href} className="group relative">
+                  <div className="flex items-center gap-1">
+                    <Link
+                      href={link.href}
+                      className="flex flex-col items-center leading-tight whitespace-nowrap transition-colors hover:text-foreground"
+                    >
+                      {link.label}
+                      {link.roll && <span className="text-xs">({link.roll})</span>}
+                    </Link>
+                    <button
+                      type="button"
+                      aria-label="Show How it works pages"
+                      className="rounded p-0.5 transition-colors hover:text-foreground"
+                    >
+                      <ChevronDown className="size-4 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" aria-hidden="true" />
+                    </button>
+                  </div>
+                  <ul className="invisible absolute left-1/2 top-full z-50 w-40 -translate-x-1/2 pt-3 opacity-0 transition-opacity group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                    <li className="rounded-xl border bg-background p-2 shadow-lg">
+                      {howItWorksSubLinks.map((sub) => (
+                        <Link
+                          key={sub.href}
+                          href={sub.href}
+                          className="block rounded-lg px-3 py-2 text-[15px] font-medium text-foreground hover:bg-secondary"
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </li>
+                  </ul>
+                </li>
+              ) : (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="flex flex-col items-center leading-tight whitespace-nowrap transition-colors hover:text-foreground"
+                  >
+                    {link.label}
+                    {link.roll && <span className="text-xs">({link.roll})</span>}
+                  </Link>
+                </li>
+              ),
+            )}
           </ul>
         </nav>
         <div className="hidden items-center gap-6 lg:flex">
@@ -66,6 +102,17 @@ export function SiteHeader() {
                   {link.label}
                   {'roll' in link && link.roll && <span className="ml-1 text-xs">({link.roll})</span>}
                 </Link>
+                {link.href === '/how-it-works' &&
+                  howItWorksSubLinks.map((sub) => (
+                    <Link
+                      key={sub.href}
+                      href={sub.href}
+                      className="ml-4 mt-1 flex items-center gap-2 py-1 text-muted-foreground hover:text-foreground"
+                    >
+                      <ChevronDown className="size-4 -rotate-90" aria-hidden="true" />
+                      {sub.label}
+                    </Link>
+                  ))}
               </li>
             ))}
           </ul>
