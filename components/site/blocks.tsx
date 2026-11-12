@@ -28,7 +28,7 @@ export function Button({
     variant === 'primary'
       ? 'bg-primary text-primary-foreground hover:opacity-90'
       : variant === 'light'
-        ? 'bg-lime text-accent-foreground hover:opacity-90'
+        ? 'bg-white text-primary hover:opacity-90'
         : 'border bg-card hover:bg-muted'
   return (
     <Link
