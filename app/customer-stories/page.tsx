@@ -100,6 +100,24 @@ export default function CustomerStoriesPage() {
         ]}
       />
 
+      <section aria-labelledby="what-you-track" className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+        <p className="text-sm font-semibold uppercase tracking-wider text-coral">What you can track</p>
+        <h2 id="what-you-track" className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Everything on your plate, in one view.</h2>
+        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            ['Calories', 'See the energy in each meal and how your day adds up against your target.'],
+            ['Macros', 'Protein, carbs, fats and fibre, shown as a breakdown you can read at a glance.'],
+            ['Micronutrients', 'Vitamins and minerals such as iron, so gaps show up early.'],
+            ['Trends', 'Weekly views that show your habits, not just your best or worst meal.'],
+          ].map(([title, body]) => (
+            <li key={title} className="rounded-3xl border bg-card p-6">
+              <h3 className="text-lg font-bold">{title}</h3>
+              <p className="mt-2 leading-relaxed text-muted-foreground">{body}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section aria-labelledby="community-tips" className="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <p className="text-sm font-semibold uppercase tracking-wider text-coral">Community tips</p>
         <h2 id="community-tips" className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Habits that make the difference.</h2>

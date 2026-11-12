@@ -321,3 +321,29 @@ export function PhotoRow({ items }: { items: { photo: Photo; caption: string }[]
     </section>
   )
 }
+
+export function HowItWorksSubnav({ current }: { current: 'how-it-works' | 'faq' }) {
+  const items = [
+    { href: '/how-it-works', label: 'How it works', key: 'how-it-works' },
+    { href: '/how-it-works/faq', label: 'FAQ', key: 'faq' },
+  ] as const
+  return (
+    <nav aria-label="How it works section" className="mx-auto max-w-6xl px-6 pt-8">
+      <ul className="inline-flex gap-1 rounded-full border bg-card p-1">
+        {items.map((item) => (
+          <li key={item.key}>
+            <Link
+              href={item.href}
+              aria-current={current === item.key ? 'page' : undefined}
+              className={`inline-flex rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
+                current === item.key ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              {item.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
+}

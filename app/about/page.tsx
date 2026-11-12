@@ -101,7 +101,26 @@ export default function AboutPage() {
       <Divider />
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-        <SectionHeading eyebrow="Our values" title="What guides every decision we make." />
+        <SectionHeading eyebrow="How we think" title="Nutrition is about patterns, not perfect plates.">
+          One meal rarely decides how you feel or how your body responds. Over days and weeks, patterns matter more. That
+          is why NutriSnap focuses on trends, balance and everyday choices rather than judging each plate.
+        </SectionHeading>
+        <ul className="mt-10 grid gap-5 md:grid-cols-3">
+          {[
+            ['Trends over moments', 'Weekly views show where your intake is steady and where it drifts.'],
+            ['Balance, not bans', 'No food is off limits. We help you see how a plate fits your goals.'],
+            ['Your food, your culture', 'Dal, rice, street food and family recipes count as much as any other meal.'],
+          ].map(([title, body]) => (
+            <li key={title} className="rounded-3xl border bg-card p-6">
+              <h3 className="text-lg font-bold">{title}</h3>
+              <p className="mt-2 leading-relaxed text-muted-foreground">{body}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+        <SectionHeading eyebrow="Our values"  title="What guides every decision we make." />
         <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {values.map((v) => (
             <li key={v.title} className="rounded-3xl border bg-card p-6">

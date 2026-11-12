@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { SiteVideo } from '@/components/site/site-video'
-import { Button, CollapsibleGroup, TableOfContents, TextWithImage } from '@/components/site/blocks'
+import { Button, CollapsibleGroup, HowItWorksSubnav, TableOfContents, TextWithImage } from '@/components/site/blocks'
 import { HowItWorksPamphlet } from '@/components/site/pamphlets'
 import { PageHero, PageShell, SectionHeading, TextLink } from '@/components/site/page-parts'
 
@@ -40,6 +40,8 @@ export default function HowItWorksPage() {
         One tap kicks off a pipeline of computer vision and nutrition science. Here&apos;s what happens each time you
         photograph your plate.
       </PageHero>
+
+      <HowItWorksSubnav current="how-it-works" />
 
       <section className="mx-auto max-w-6xl px-6 pb-12">
         <TableOfContents
@@ -111,6 +113,25 @@ export default function HowItWorksPage() {
             ['Easy & convenient', 'Snap, analyse and track in seconds, with no barcodes to find.'],
             ['Personalised insights', 'See your calories, macros and micronutrients against your goals.'],
             ['Expert support', 'Connect with a dietician for guidance that fits your condition and your life.'],
+          ].map(([title, body]) => (
+            <li key={title} className="rounded-3xl border bg-card p-6">
+              <h3 className="text-lg font-bold">{title}</h3>
+              <p className="mt-2 leading-relaxed text-muted-foreground">{body}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section id="scenarios" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+        <SectionHeading eyebrow="Real situations" title="How to log the meals you actually have.">
+          Not every meal comes on a clean white plate. Here is how to get a good read in common situations.
+        </SectionHeading>
+        <ul className="mt-10 grid gap-5 md:grid-cols-2">
+          {[
+            ['Home-cooked dal and roti', 'Fit the whole thali in the frame. Mention ghee or oil if you added it while cooking, since it changes the fat total.'],
+            ['Mixed plates and bowls', 'Take the photo from above with the bowl in full view. Use the review step to swap any item the scan missed.'],
+            ['Packaged snacks', 'Scan the barcode instead of the photo. The label data is more precise than an estimate from a picture.'],
+            ['Eating out', 'Photograph the dish before you start. Restaurant mode on Pro helps with the menu-style meals you order most.'],
           ].map(([title, body]) => (
             <li key={title} className="rounded-3xl border bg-card p-6">
               <h3 className="text-lg font-bold">{title}</h3>

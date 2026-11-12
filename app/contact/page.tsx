@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Building2, Clock, Mail, MessageCircle } from 'lucide-react'
+import Link from 'next/link'
 import { ContactForm } from '@/components/site/blocks'
 import { PageHero, PageShell, TextLink } from '@/components/site/page-parts'
 
@@ -31,6 +32,28 @@ export default function ContactPage() {
               </span>
               <h2 className="mt-5 text-lg font-bold">{c.title}</h2>
               <p className="mt-1 text-muted-foreground">{c.body}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="quick-help" className="mx-auto max-w-6xl px-6 pb-16">
+        <h2 id="quick-help" className="text-3xl font-bold tracking-tight md:text-4xl">Quick help first</h2>
+        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          Many questions are answered in the FAQ or in our how-it-works guide. Check there first and you may get your answer
+          in a minute.
+        </p>
+        <ul className="mt-8 grid gap-5 md:grid-cols-3">
+          {[
+            ['Scan not recognised', '/how-it-works', 'Read the tips on lighting, framing and real-life situations.'],
+            ['Account, plans & billing', '/how-it-works/faq', 'Trials, cancellations, discounts and refunds are covered in the FAQ.'],
+            ['Data & privacy', '/how-it-works/faq', 'See how your photos are handled and how to export or delete your data.'],
+          ].map(([title, href, body]) => (
+            <li key={title}>
+              <Link href={href} className="block h-full rounded-3xl border bg-card p-6 transition-colors hover:bg-secondary">
+                <h3 className="text-lg font-bold">{title}</h3>
+                <p className="mt-2 leading-relaxed text-muted-foreground">{body}</p>
+              </Link>
             </li>
           ))}
         </ul>

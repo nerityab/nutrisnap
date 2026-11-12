@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ChevronDown } from 'lucide-react'
+import { HowItWorksSubnav } from '@/components/site/blocks'
 import { PageHero, PageShell, TextLink } from '@/components/site/page-parts'
 
 export const metadata: Metadata = {
@@ -24,6 +25,8 @@ const groups = [
       { q: 'What if the AI gets something wrong?', a: 'Tap the item to swap it or change the portion. Corrections train your personal model, so later scans get better.' },
       { q: 'Can I still log food manually or scan barcodes?', a: 'Of course. Manual search and barcode scanning are included for packaged foods and drinks.' },
       { q: 'Does it recognise Indian food?', a: 'Yes. NutriSnap is built for everyday Indian meals, from dal and roti to biryani, regional thalis and home-cooked dishes. If a dish is not recognised, you can still search for it or log it manually.' },
+      { q: 'How do I correct a wrong result?', a: 'Tap the item and swap it for the right food, or change the portion. Your correction is saved to your meal and helps your personal model learn.' },
+      { q: 'Can I scan packaged food instead of a photo?', a: 'Yes. Scan the barcode for packaged snacks and drinks. Barcode data is usually more precise than an estimate from a photo.' },
       { q: 'Can I see what my meal is missing?', a: 'Yes. The breakdown shows your protein, carbs, fats and fibre, so you can see whether a plate is balanced before or after you eat.' },
     ],
   },
@@ -68,6 +71,8 @@ export default function FaqPage() {
       <PageHero eyebrow="FAQ" title="Frequently asked questions.">
         Everything you need to know about NutriSnap. Can&apos;t find your answer? Our team is happy to help.
       </PageHero>
+
+      <HowItWorksSubnav current="faq" />
 
       <div className="mx-auto flex max-w-4xl flex-col gap-14 px-6 pb-20">
         <p className="-mb-6 text-muted-foreground">

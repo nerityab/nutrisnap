@@ -191,6 +191,25 @@ export default function PricingPage() {
         </p>
       </section>
 
+      <section aria-label="Make your trial count" className="mx-auto max-w-6xl px-6 pb-16">
+        <div className="rounded-3xl bg-secondary p-8 md:p-12">
+          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Make your 14 days count.</h2>
+          <ol className="mt-8 grid gap-5 md:grid-cols-3">
+            {[
+              ['Week 1: set your goals', 'Add your age, height, weight, activity level and goal so your targets are personal from day one.'],
+              ['Week 1: log every meal', 'Snap your breakfast, lunch and dinner. Correct any item that looks off, so the model learns your food.'],
+              ['Week 2: read your trends', 'Look at your weekly macros and micronutrients to see what to change, rather than judging a single meal.'],
+            ].map(([title, body], i) => (
+              <li key={title} className="rounded-3xl bg-card p-6">
+                <span className="font-display text-4xl font-bold text-border" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                <h3 className="mt-4 text-lg font-bold">{title}</h3>
+                <p className="mt-2 leading-relaxed text-muted-foreground">{body}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
       <section aria-label="Plan questions" className="mx-auto max-w-6xl px-6 pb-16">
         <CollapsibleGroup title="Plan questions" items={planFaq} />
         <div className="mt-8">
