@@ -35,6 +35,23 @@ export function SiteFooter() {
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-primary-foreground/75">
             AI food intelligence and visual macro tracking. Snap your plate, know your fuel.
           </p>
+          <ul className="mt-6 flex flex-col gap-2 text-sm text-primary-foreground/80">
+            <li>
+              <a href="https://www.instagram.com/nutrisnap" className="hover:text-primary-foreground" target="_blank" rel="noopener noreferrer">
+                Instagram: @nutrisnap
+              </a>
+            </li>
+            <li>
+              <a href="https://www.nutrisnap.ai" className="hover:text-primary-foreground" target="_blank" rel="noopener noreferrer">
+                Website: nutrisnap.ai
+              </a>
+            </li>
+            <li>
+              <a href="mailto:hello@nutrisnap.app" className="hover:text-primary-foreground">
+                Email: hello@nutrisnap.app
+              </a>
+            </li>
+          </ul>
         </div>
         {columns.map((col) => (
           <div key={col.title}>

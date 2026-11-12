@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { SiteVideo } from '@/components/site/site-video'
 import { HeartHandshake, FlaskConical, Lock, Globe } from 'lucide-react'
+import { Divider } from '@/components/site/blocks'
 import { Initials, PageHero, PageShell, SectionHeading } from '@/components/site/page-parts'
 import { AboutPamphlets } from '@/components/site/pamphlets'
 
@@ -57,6 +58,8 @@ export default function AboutPage() {
           </SectionHeading>
         </div>
       </section>
+
+      <Divider />
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
         <SectionHeading eyebrow="Our values" title="What guides every decision we make." />

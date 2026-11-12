@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { SiteVideo } from '@/components/site/site-video'
+import { CollapsibleGroup, Button, TableOfContents } from '@/components/site/blocks'
 import { HowItWorksPamphlet } from '@/components/site/pamphlets'
 import { PageHero, PageShell, SectionHeading, TextLink } from '@/components/site/page-parts'
 
@@ -14,6 +15,15 @@ const steps = [
   { title: 'AI identifies & measures', body: 'The vision model separates each food, estimates its volume from depth cues and matches it to verified nutrition data.' },
   { title: 'Review & adjust', body: 'Your breakdown appears instantly. Swap an item or nudge a portion — every fix teaches your personal model.' },
   { title: 'Track your progress', body: 'Rings, weekly trends and coach insights show how your meals add up against your goals.' },
+]
+
+const conditions = [
+  { q: 'Type 2 Diabetes', a: 'The challenge: large portions and refined carbs push blood sugar up and down. How NutriSnap helps: shows the carbohydrate content of a meal so you can compare plates before you eat.' },
+  { q: 'High Blood Pressure', a: 'The challenge: too much sodium, mostly from packaged and restaurant food. How NutriSnap helps: spot salty, processed meals so you can swap them for fresher options.' },
+  { q: 'Heart Disease & Cholesterol', a: 'The challenge: hidden oil, ghee and saturated fat in everyday gravies and fried food. How NutriSnap helps: estimates fat content, including cooking oil, so heavy dishes stop hiding in plain sight.' },
+  { q: 'Obesity & Weight Gain', a: 'The challenge: eating more than you burn, without noticing it. How NutriSnap helps: instant calorie estimates keep your daily intake visible, with no manual logging.' },
+  { q: 'Anaemia', a: 'The challenge: low iron intake, especially common among young women. How NutriSnap helps: tracks key nutrients over time so gaps in your diet show up early.' },
+  { q: 'PCOS', a: 'The challenge: diet quality can affect symptoms linked to insulin resistance. How NutriSnap helps: makes it easier to choose balanced, lower-sugar meals again and again.' },
 ]
 
 const tips = [
@@ -31,7 +41,18 @@ export default function HowItWorksPage() {
         photograph your plate.
       </PageHero>
 
-      <section aria-label="Steps" className="mx-auto max-w-6xl px-6 pb-20">
+      <section className="mx-auto max-w-6xl px-6 pb-12">
+        <TableOfContents
+          items={[
+            { href: '#steps', label: 'The five steps' },
+            { href: '#tips', label: 'Pro tips' },
+            { href: '#conditions', label: 'Conditions' },
+            { href: '#faq', label: 'FAQ' },
+          ]}
+        />
+      </section>
+
+      <section id="steps" aria-label="Steps" className="mx-auto max-w-6xl px-6 pb-20">
         <ol className="flex flex-col gap-4">
           {steps.map((step, i) => (
             <li key={step.title} className="flex flex-col gap-4 rounded-3xl border bg-card p-6 sm:flex-row sm:items-start sm:gap-8 md:p-8">
@@ -51,7 +72,7 @@ export default function HowItWorksPage() {
 
       <SiteVideo />
 
-      <section className="bg-secondary">
+      <section id="tips" className="bg-secondary">
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
           <SectionHeading eyebrow="Pro tips" title="Get the most accurate scan.">
             NutriSnap handles everyday photos well, and a few simple habits make it even sharper.
@@ -69,7 +90,18 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 pt-20">
+      <section id="conditions" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+        <CollapsibleGroup title="Conditions NutriSnap can help you track" items={conditions} />
+        <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
+          NutriSnap is a food-information tool, not a medical device. It does not diagnose, treat or cure any disease.
+          Always follow the advice of your doctor or dietician.
+        </p>
+        <div className="mt-8">
+          <Button href="/pricing">Start free trial</Button>
+        </div>
+      </section>
+
+      <section id="faq" className="mx-auto max-w-6xl px-6 pt-20">
         <SectionHeading title="Still have questions?">We&apos;ve covered the most common ones.</SectionHeading>
         <div className="mt-6">
           <TextLink href="/faq">Read the FAQ</TextLink>

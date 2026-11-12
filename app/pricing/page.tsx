@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { SiteVideo } from '@/components/site/site-video'
 import Link from 'next/link'
 import { Check, GraduationCap, ShieldCheck, Stethoscope } from 'lucide-react'
+import { Button, CollapsibleGroup } from '@/components/site/blocks'
 import { PricingPamphlet } from '@/components/site/pamphlets'
 import { PageHero, PageShell, TextLink } from '@/components/site/page-parts'
 import { cn } from '@/lib/utils'
@@ -37,6 +38,27 @@ const plans = [
     cta: 'Start 14-day free trial',
     items: ['Everything in Pro', 'Up to 5 profiles', 'Shared family recipes', 'Kid-friendly goals', 'Priority support'],
   },
+]
+
+const comparison = [
+  { feature: 'AI photo scans', free: '3 per day', pro: 'Unlimited', family: 'Unlimited' },
+  { feature: 'Manual & barcode logging', free: 'Included', pro: 'Included', family: 'Included' },
+  { feature: 'Calorie & macro tracking', free: 'Included', pro: 'Included', family: 'Included' },
+  { feature: 'Weekly summary', free: 'Included', pro: 'Included', family: 'Included' },
+  { feature: '30+ micronutrients', free: '—', pro: 'Included', family: 'Included' },
+  { feature: 'AI nutrition coach', free: '—', pro: 'Included', family: 'Included' },
+  { feature: 'Restaurant mode', free: '—', pro: 'Included', family: 'Included' },
+  { feature: 'Health app sync', free: '—', pro: 'Included', family: 'Included' },
+  { feature: 'Data export (CSV / PDF)', free: '—', pro: 'Included', family: 'Included' },
+  { feature: 'Profiles', free: '—', pro: '—', family: 'Up to 5' },
+  { feature: 'Shared family recipes & kid-friendly goals', free: '—', pro: '—', family: 'Included' },
+  { feature: 'Priority support', free: '—', pro: '—', family: 'Included' },
+]
+
+const planFaq = [
+  { q: 'Is there a free version?', a: 'Yes. Free includes 3 photo scans a day and unlimited manual logging. Pro adds unlimited scans, micronutrients and the AI coach.' },
+  { q: 'How does the free trial work?', a: 'Pro includes a 14-day trial with no credit card. You only pick a plan when the trial ends.' },
+  { q: 'Can I cancel anytime?', a: 'Yes, in one tap from account settings. Pro stays active until your billing period ends.' },
 ]
 
 const extras = [
@@ -98,7 +120,34 @@ export default function PricingPage() {
         </ul>
       </section>
 
-      <section aria-label="More options" className="mx-auto max-w-6xl px-6">
+      <section aria-label="Compare plans" className="mx-auto max-w-6xl px-6 pb-16">
+        <div className="overflow-x-auto rounded-3xl border bg-card">
+          <table className="w-full min-w-[560px] border-collapse text-left">
+            <caption className="px-6 pt-6 text-left text-xl font-bold md:px-8">Compare plans</caption>
+            <thead>
+              <tr className="border-b text-sm uppercase tracking-wider text-muted-foreground">
+                <th scope="col" className="px-6 py-4 font-semibold md:px-8">Feature</th>
+                <th scope="col" className="px-6 py-4 font-semibold">Free</th>
+                <th scope="col" className="px-6 py-4 font-semibold">Pro</th>
+                <th scope="col" className="px-6 py-4 font-semibold">Family</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparison.map((row, i) => (
+                <tr key={row.feature} className={i % 2 ? 'bg-secondary/40' : ''}>
+                  <th scope="row" className="px-6 py-4 font-medium md:px-8">{row.feature}</th>
+                  <td className="px-6 py-4 text-muted-foreground">{row.free}</td>
+                  <td className="px-6 py-4 text-muted-foreground">{row.pro}</td>
+                  <td className="px-6 py-4 text-muted-foreground">{row.family}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-label="More options"
+ className="mx-auto max-w-6xl px-6">
         <ul className="grid gap-5 md:grid-cols-3">
           {extras.map((e) => (
             <li key={e.title} className="flex gap-4 rounded-3xl bg-secondary p-6">
@@ -113,6 +162,13 @@ export default function PricingPage() {
         <p className="mt-10 flex flex-wrap items-center gap-2 text-muted-foreground">
           Questions about billing? <TextLink href="/faq">Read the FAQ</TextLink>
         </p>
+      </section>
+
+      <section aria-label="Plan questions" className="mx-auto max-w-6xl px-6 pb-16">
+        <CollapsibleGroup title="Plan questions" items={planFaq} />
+        <div className="mt-8">
+          <Button href="/faq" variant="outline">Read the full FAQ</Button>
+        </div>
       </section>
 
       <PricingPamphlet />

@@ -1,0 +1,179 @@
+import Image from 'next/image'
+import Link from 'next/link'
+import { ChevronDown } from 'lucide-react'
+
+export function Divider() {
+  return (
+    <div className="mx-auto max-w-6xl px-6" aria-hidden="true">
+      <hr className="border-t" />
+    </div>
+  )
+}
+
+export function Spacer({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' }) {
+  const heights = { sm: 'h-8', md: 'h-16', lg: 'h-24' } as const
+  return <div aria-hidden="true" className={heights[size]} />
+}
+
+export function Button({
+  href,
+  children,
+  variant = 'primary',
+}: {
+  href: string
+  children: React.ReactNode
+  variant?: 'primary' | 'outline'
+}) {
+  const styles =
+    variant === 'primary'
+      ? 'bg-primary text-primary-foreground hover:opacity-90'
+      : 'border bg-card hover:bg-muted'
+  return (
+    <Link
+      href={href}
+      className={`inline-flex items-center gap-2 rounded-full px-6 py-3 font-semibold transition-opacity ${styles}`}
+    >
+      {children}
+    </Link>
+  )
+}
+
+export function ImageCarousel({
+  label,
+  slides,
+}: {
+  label: string
+  slides: { src: string; alt: string; caption: string }[]
+}) {
+  return (
+    <section aria-label={label} className="mx-auto max-w-6xl px-6 py-12 md:py-16">
+      <ul className="flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4">
+        {slides.map((s) => (
+          <li key={s.src} className="w-[85%] shrink-0 snap-center md:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.84rem)]">
+            <figure className="flex h-full flex-col gap-3 rounded-3xl border bg-card p-4">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted">
+                <Image src={s.src} alt={s.alt} fill sizes="(min-width: 1024px) 380px, (min-width: 768px) 50vw, 85vw" className="object-cover" />
+              </div>
+              <figcaption className="px-2 pb-2 font-medium">{s.caption}</figcaption>
+            </figure>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+export function CollapsibleGroup({
+  title,
+  items,
+}: {
+  title: string
+  items: { q: string; a: string }[]
+}) {
+  return (
+    <div className="flex flex-col gap-3">
+      <h2 className="mb-2 text-2xl font-bold tracking-tight md:text-3xl">{title}</h2>
+      {items.map((item) => (
+        <details key={item.q} className="group rounded-2xl border bg-card p-5 open:shadow-sm">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold">
+            {item.q}
+            <ChevronDown className="size-5 shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
+          </summary>
+          <p className="mt-3 leading-relaxed text-muted-foreground">{item.a}</p>
+        </details>
+      ))}
+    </div>
+  )
+}
+
+export function TableOfContents({ items }: { items: { href: string; label: string }[] }) {
+  return (
+    <nav aria-label="On this page" className="rounded-3xl border bg-card p-6 md:p-8">
+      <p className="text-sm font-semibold uppercase tracking-wider text-coral">On this page</p>
+      <ol className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+        {items.map((item, i) => (
+          <li key={item.href}>
+            <a href={item.href} className="flex items-center gap-3 rounded-xl px-3 py-2 font-medium hover:bg-secondary">
+              <span className="text-sm text-muted-foreground">{String(i + 1).padStart(2, '0')}</span>
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )
+}
+
+export function BarChart({
+  title,
+  source,
+  bars,
+}: {
+  title: string
+  source: string
+  bars: { label: string; value: number }[]
+}) {
+  return (
+    <figure className="rounded-3xl border bg-card p-6 md:p-10">
+      <figcaption>
+        <p className="text-xl font-bold md:text-2xl">{title}</p>
+        <p className="mt-1 text-sm text-muted-foreground">{source}</p>
+      </figcaption>
+      <ul className="mt-8 flex flex-col gap-6">
+        {bars.map((b) => (
+          <li key={b.label}>
+            <div className="flex items-baseline justify-between gap-4 text-sm font-medium">
+              <span>{b.label}</span>
+              <span className="font-display text-lg font-bold">{b.value}%</span>
+            </div>
+            <div className="mt-2 h-3 overflow-hidden rounded-full bg-muted">
+              <div className="h-full rounded-full bg-primary" style={{ width: `${b.value}%` }} />
+            </div>
+          </li>
+        ))}
+      </ul>
+    </figure>
+  )
+}
+
+export function ContactForm() {
+  const field = 'mt-2 w-full rounded-xl border bg-background px-4 py-3 font-normal outline-none focus:ring-2 focus:ring-primary/30'
+  return (
+    <form
+      action="mailto:hello@nutrisnap.app"
+      method="post"
+      encType="text/plain"
+      className="grid gap-5 rounded-3xl border bg-card p-6 md:p-10"
+    >
+      <div className="grid gap-5 md:grid-cols-2">
+        <label htmlFor="contact-name" className="block font-semibold">
+          Name
+          <input id="contact-name" name="Name" required autoComplete="name" className={field} />
+        </label>
+        <label htmlFor="contact-email" className="block font-semibold">
+          Email
+          <input id="contact-email" name="Email" type="email" required autoComplete="email" className={field} />
+        </label>
+      </div>
+      <label htmlFor="contact-topic" className="block font-semibold">
+        Topic
+        <select id="contact-topic" name="Topic" defaultValue="General question" className={field}>
+          <option>General question</option>
+          <option>Feedback</option>
+          <option>Partnership</option>
+          <option>Press</option>
+        </select>
+      </label>
+      <label htmlFor="contact-message" className="block font-semibold">
+        Message
+        <textarea id="contact-message" name="Message" required rows={5} className={field} />
+      </label>
+      <div>
+        <button type="submit" className="rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground transition-opacity hover:opacity-90">
+          Send message
+        </button>
+        <p className="mt-3 text-sm text-muted-foreground">This opens your email app with your message addressed to our team.</p>
+      </div>
+    </form>
+  )
+}

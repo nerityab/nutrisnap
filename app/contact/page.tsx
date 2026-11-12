@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Building2, Clock, Mail, MessageCircle } from 'lucide-react'
+import { ContactForm } from '@/components/site/blocks'
 import { PageHero, PageShell, TextLink } from '@/components/site/page-parts'
 
 export const metadata: Metadata = {
@@ -33,6 +34,11 @@ export default function ContactPage() {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section aria-labelledby="contact-form-heading" className="mx-auto max-w-3xl px-6 pb-16">
+        <h2 id="contact-form-heading" className="mb-6 text-3xl font-bold tracking-tight md:text-4xl">Write to us</h2>
+        <ContactForm />
       </section>
 
       <section className="mx-auto max-w-6xl px-6 pb-20">
