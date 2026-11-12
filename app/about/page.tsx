@@ -101,7 +101,46 @@ export default function AboutPage() {
       <Divider />
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-        <SectionHeading eyebrow="How we think" title="Nutrition is about patterns, not perfect plates.">
+        <SectionHeading eyebrow="Privacy" title="Your meals are personal. We treat them that way.">
+          Photos of your food say a lot about you. We keep that data in your account, and we are clear about what we do and
+          do not do with it.
+        </SectionHeading>
+        <ul className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {[
+            ['Encrypted in transit', 'Your photos are protected while they travel to our servers.'],
+            ['Kept in your account', 'Meal photos are used to produce your nutrition data and stay in your account.'],
+            ['No ads from your photos', 'We never use your meal photos to sell advertising.'],
+            ['We never sell your data', 'Your information is not sold to third parties.'],
+          ].map(([title, body]) => (
+            <li key={title} className="rounded-3xl border bg-card p-6">
+              <h3 className="text-lg font-bold">{title}</h3>
+              <p className="mt-2 leading-relaxed text-muted-foreground">{body}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 pb-20 md:pb-24">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr]">
+          <SectionHeading eyebrow="About us" title="Questions people ask about us." />
+          <dl className="divide-y rounded-3xl border bg-card">
+            {[
+              ['Who builds NutriSnap?', 'A team of students who wanted an easier way to understand everyday food, including Indian meals.'],
+              ['Is NutriSnap a medical device?', 'No. It is a food-information tool. It does not diagnose, treat or cure any disease, so follow your doctor or dietician.'],
+              ['How do I reach the team?', 'Email hello@nutrisnap.app or use the contact page. Our support team usually replies within one business day.'],
+              ['Can I delete my data?', 'Yes. You can export or permanently delete everything any time from Settings → Privacy.'],
+            ].map(([q, a]) => (
+              <div key={q} className="p-6">
+                <dt className="font-semibold">{q}</dt>
+                <dd className="mt-2 leading-relaxed text-muted-foreground">{a}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+        <SectionHeading eyebrow="How we think"  title="Nutrition is about patterns, not perfect plates.">
           One meal rarely decides how you feel or how your body responds. Over days and weeks, patterns matter more. That
           is why NutriSnap focuses on trends, balance and everyday choices rather than judging each plate.
         </SectionHeading>

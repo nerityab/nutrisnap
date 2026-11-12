@@ -100,6 +100,46 @@ export default function CustomerStoriesPage() {
         ]}
       />
 
+      <section aria-labelledby="example-days" className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+        <p className="text-sm font-semibold uppercase tracking-wider text-coral">Example days</p>
+        <h2 id="example-days" className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">What a day of logging can look like.</h2>
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          These are illustrative examples, not real customer records. They show how a day might look when you use NutriSnap.
+        </p>
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          {[
+            {
+              title: 'A busy weekday',
+              meals: ['Breakfast: poha with peanuts, snapped before leaving home', 'Lunch: packed dal, roti and salad, scanned at the desk', 'Dinner: paneer curry with rice, reviewed and adjusted'],
+              note: 'Reviewing the day showed the protein target was close, with a fibre gap to close at breakfast the next day.',
+            },
+            {
+              title: 'A weekend out',
+              meals: ['Brunch: dosa with sambar, one photo from the table', 'Snack: barcode scan of a packaged drink', 'Dinner: a shared thali, logged item by item'],
+              note: 'Splitting a shared plate is easy: correct the portion for each person and the totals stay accurate.',
+            },
+            {
+              title: 'A training day',
+              meals: ['Pre-workout: banana and toast, logged in seconds', 'Post-workout: eggs, curd and rice', 'Evening: a light meal, checked against the protein goal'],
+              note: 'Seeing protein timing across the day made it easier to plan the next session’s fuel.',
+            },
+          ].map((day) => (
+            <article key={day.title} className="flex flex-col gap-5 rounded-3xl border bg-card p-7">
+              <h3 className="text-xl font-bold">{day.title}</h3>
+              <ul className="flex flex-col gap-3 text-muted-foreground">
+                {day.meals.map((m) => (
+                  <li key={m} className="flex gap-3 leading-relaxed">
+                    <span className="mt-2 size-2 shrink-0 rounded-full bg-coral" aria-hidden="true" />
+                    {m}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-auto rounded-2xl bg-secondary p-4 text-sm leading-relaxed">{day.note}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section aria-labelledby="what-you-track" className="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <p className="text-sm font-semibold uppercase tracking-wider text-coral">What you can track</p>
         <h2 id="what-you-track" className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Everything on your plate, in one view.</h2>

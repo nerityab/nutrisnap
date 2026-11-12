@@ -191,6 +191,62 @@ export default function PricingPage() {
         </p>
       </section>
 
+      <section aria-label="What every plan includes" className="mx-auto max-w-6xl px-6 pb-16">
+        <h2 className="text-3xl font-bold tracking-tight md:text-4xl">What every plan includes</h2>
+        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          Whichever plan you choose, you get the basics that make logging simple and your data safe.
+        </p>
+        <ul className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {[
+            ['Photo or manual logging', 'Log by photo, search or barcode, and correct any item with a tap.'],
+            ['Calorie & macro tracking', 'See energy, protein, carbs, fats and fibre for every meal.'],
+            ['Your data, your control', 'Export or permanently delete your data any time from Settings → Privacy.'],
+            ['Cancel in one tap', 'Cancel from account settings. Paid plans stay active until the billing period ends.'],
+          ].map(([title, body]) => (
+            <li key={title} className="rounded-3xl border bg-card p-6">
+              <h3 className="text-lg font-bold">{title}</h3>
+              <p className="mt-2 leading-relaxed text-muted-foreground">{body}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-label="Discounts and teams" className="mx-auto max-w-6xl px-6 pb-16">
+        <div className="grid gap-5 lg:grid-cols-2">
+          <div className="rounded-3xl bg-primary p-8 text-primary-foreground md:p-10">
+            <h2 className="text-2xl font-bold md:text-3xl">Students</h2>
+            <p className="mt-3 leading-relaxed text-primary-foreground/85">
+              Get half price on Pro with a valid student email address. Make campus meals easier to track.
+            </p>
+            <div className="mt-6">
+              <Button href="/contact" variant="outline">Ask about student pricing</Button>
+            </div>
+          </div>
+          <div className="rounded-3xl border bg-card p-8 md:p-10">
+            <h2 className="text-2xl font-bold md:text-3xl">Coaches, clinics & teams</h2>
+            <p className="mt-3 leading-relaxed text-muted-foreground">
+              Run a group or practice? Client dashboards and bulk licences are available on request, so you can support many
+              people with one plan and see how they are doing.
+            </p>
+            <div className="mt-6">
+              <Button href="/contact">Talk to our team</Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="Guarantee" className="mx-auto max-w-6xl px-6 pb-16">
+        <div className="flex flex-col gap-4 rounded-3xl border bg-card p-8 md:flex-row md:items-center md:justify-between md:p-10">
+          <div>
+            <h2 className="text-2xl font-bold md:text-3xl">Not happy within 30 days?</h2>
+            <p className="mt-2 max-w-2xl leading-relaxed text-muted-foreground">
+              Ask for a full refund within 30 days. We want NutriSnap to be useful for you, not a plan you feel locked into.
+            </p>
+          </div>
+          <Button href="/contact" variant="outline">Request a refund</Button>
+        </div>
+      </section>
+
       <section aria-label="Make your trial count" className="mx-auto max-w-6xl px-6 pb-16">
         <div className="rounded-3xl bg-secondary p-8 md:p-12">
           <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Make your 14 days count.</h2>
