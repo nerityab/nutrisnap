@@ -68,11 +68,11 @@ const groups = [
 export default function FaqPage() {
   return (
     <PageShell>
+      <HowItWorksSubnav current="faq" />
+
       <PageHero eyebrow="FAQ" title="Frequently asked questions.">
         Everything you need to know about NutriSnap. Can&apos;t find your answer? Our team is happy to help.
       </PageHero>
-
-      <HowItWorksSubnav current="faq" />
 
       <div className="mx-auto flex max-w-4xl flex-col gap-14 px-6 pb-20">
         <p className="-mb-6 text-muted-foreground">

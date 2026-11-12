@@ -36,12 +36,12 @@ const tips = [
 export default function HowItWorksPage() {
   return (
     <PageShell>
+      <HowItWorksSubnav current="how-it-works" />
+
       <PageHero eyebrow="How it works" title="From photo to full nutrition in seconds.">
         One tap kicks off a pipeline of computer vision and nutrition science. Here&apos;s what happens each time you
         photograph your plate.
       </PageHero>
-
-      <HowItWorksSubnav current="how-it-works" />
 
       <section className="mx-auto max-w-6xl px-6 pb-12">
         <TableOfContents

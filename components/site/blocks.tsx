@@ -328,7 +328,7 @@ export function HowItWorksSubnav({ current }: { current: 'how-it-works' | 'faq' 
     { href: '/how-it-works/faq', label: 'FAQ', key: 'faq' },
   ] as const
   return (
-    <nav aria-label="How it works section" className="mx-auto max-w-6xl px-6 pt-8">
+    <nav aria-label="How it works section" className="mx-auto max-w-6xl px-6 pt-6">
       <ul className="inline-flex gap-1 rounded-full border bg-card p-1">
         {items.map((item) => (
           <li key={item.key}>
