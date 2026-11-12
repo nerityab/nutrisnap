@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { SiteVideo } from '@/components/site/site-video'
 import { HeartHandshake, FlaskConical, Lock, Globe } from 'lucide-react'
-import { Divider } from '@/components/site/blocks'
+import { Divider, MosaicBlock } from '@/components/site/blocks'
 import { Initials, PageHero, PageShell, SectionHeading } from '@/components/site/page-parts'
 import { AboutPamphlets } from '@/components/site/pamphlets'
 
@@ -58,6 +58,14 @@ export default function AboutPage() {
           </SectionHeading>
         </div>
       </section>
+
+      <MosaicBlock
+        eyebrow="Our approach"
+        title="Real food, real plates."
+        body="Our model has learned from over 40,000 dishes across 120 cuisines, so it recognises food the way people really eat it."
+        large={{ src: '/images/meal-breakfast.png', alt: 'Avocado toast with a poached egg, berries and coffee' }}
+        small={[{ src: '/images/hero-scan.png', alt: 'A phone held over a salmon and quinoa bowl, showing a NutriSnap macro breakdown on screen' }, { src: '/images/pamphlet-poster.jpg', alt: 'NutriSnap poster showing AI food analysis, personalised insights and the Fitness Focus section.' }]}
+      />
 
       <Divider />
 

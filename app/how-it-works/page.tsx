@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { SiteVideo } from '@/components/site/site-video'
-import { CollapsibleGroup, Button, TableOfContents } from '@/components/site/blocks'
+import { Button, CollapsibleGroup, TableOfContents, TextWithImage } from '@/components/site/blocks'
 import { HowItWorksPamphlet } from '@/components/site/pamphlets'
 import { PageHero, PageShell, SectionHeading, TextLink } from '@/components/site/page-parts'
 
@@ -67,6 +67,13 @@ export default function HowItWorksPage() {
           ))}
         </ol>
       </section>
+
+      <TextWithImage
+        eyebrow="Before your first bite"
+        title="Frame the whole plate."
+        body="An angle of roughly 45° with the whole plate visible gives the best read."
+        photo={{ src: '/images/hero-scan.png', alt: 'A phone held over a salmon and quinoa bowl, showing a NutriSnap macro breakdown on screen' }}
+      />
 
       <HowItWorksPamphlet />
 

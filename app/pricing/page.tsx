@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { SiteVideo } from '@/components/site/site-video'
 import Link from 'next/link'
 import { Check, GraduationCap, ShieldCheck, Stethoscope } from 'lucide-react'
-import { Button, CollapsibleGroup } from '@/components/site/blocks'
+import { Button, CollapsibleGroup, ThumbnailRows } from '@/components/site/blocks'
 import { PricingPamphlet } from '@/components/site/pamphlets'
 import { PageHero, PageShell, TextLink } from '@/components/site/page-parts'
 import { cn } from '@/lib/utils'
@@ -119,6 +119,13 @@ export default function PricingPage() {
           ))}
         </ul>
       </section>
+
+      <ThumbnailRows
+        items={[
+          { photo: { src: '/images/pricing-pamphlet.jpg', alt: 'NutriSnap poster titled "Eat Smart, Without the Guesswork"' }, title: 'Free to start', body: 'Three photo scans a day and unlimited manual logging, with no card needed.' },
+          { photo: { src: '/images/pamphlet-trifold.jpg', alt: 'NutriSnap tri-fold pamphlet covering what NutriSnap is, how it works, why NutriSnap, and a 14-day free trial.' }, title: '14-day Pro trial', body: 'Try unlimited scans, the AI coach and micronutrients free for 14 days.' },
+        ]}
+      />
 
       <section aria-label="Compare plans" className="mx-auto max-w-6xl px-6 pb-16">
         <div className="overflow-x-auto rounded-3xl border bg-card">

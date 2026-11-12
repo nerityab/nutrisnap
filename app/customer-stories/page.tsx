@@ -3,6 +3,7 @@ import { SiteVideo } from '@/components/site/site-video'
 import Image from 'next/image'
 import { Initials, PageHero, PageShell } from '@/components/site/page-parts'
 import { AppDemo } from '@/components/site/app-demo'
+import { ThreeColumnBlocks, TwoColumnBlocks } from '@/components/site/blocks'
 import { StoriesPamphlets } from '@/components/site/pamphlets'
 
 export const metadata: Metadata = {
@@ -83,6 +84,21 @@ export default function CustomerStoriesPage() {
           ))}
         </ul>
       </section>
+
+      <TwoColumnBlocks
+        items={[
+          { photo: {'src': '/images/meal-breakfast.png', 'alt': 'Avocado toast with a poached egg, berries and coffee'}, title: 'Fuelling a marathon', body: 'Five months of snapping meals helped one runner eat enough, recover faster and set a personal best.' },
+          { photo: {'src': '/images/hero-scan.png', 'alt': 'A phone held over a salmon and quinoa bowl, showing a NutriSnap macro breakdown on screen'}, title: 'Logging a busy day', body: 'One photo and the meal is logged, with no weighing, no searching and no estimating.' },
+        ]}
+      />
+
+      <ThreeColumnBlocks
+        items={[
+          { photo: { src: '/images/features-pamphlet-1.jpg', alt: 'NutriSnap bottle-shaped pamphlet on the smart plate revolution and three steps to mindful eating.' }, title: 'Smart plate', body: 'Point, shoot, nourish: every photo becomes health data.' },
+          { photo: { src: '/images/features-pamphlet-2.jpg', alt: 'NutriSnap red pamphlet with the AI food tracker and our AI story.' }, title: 'Our AI story', body: 'Smart AI scans built on advanced nutrition algorithms.' },
+          { photo: { src: '/images/features-pamphlet-3.jpg', alt: 'NutriSnap green tri-fold pamphlet covering smart dining and intelligent insights.' }, title: 'Smart features', body: 'Multi-food capture, macro estimation and micronutrient tracking.' },
+        ]}
+      />
 
       <AppDemo />
 

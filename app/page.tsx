@@ -1,4 +1,4 @@
-import { BarChart, Button, Divider, ImageCarousel, Spacer } from '@/components/site/blocks'
+import { BarChart, Button, Divider, PhotoRow, Spacer } from '@/components/site/blocks'
 import { Hero } from '@/components/site/hero'
 import { Pamphlets } from '@/components/site/pamphlets'
 import { FinalCta, HowItWorks, RealLife, Stats, Testimonial } from '@/components/site/sections'
@@ -8,9 +8,10 @@ import { SiteHeader } from '@/components/site/site-header'
 import { SiteVideo } from '@/components/site/site-video'
 
 const gallery = [
-  { src: '/images/hero-scan.png', alt: 'A phone held over a salmon and quinoa bowl, showing a NutriSnap macro breakdown on screen', caption: 'Scan a plate in seconds' },
-  { src: '/images/meal-breakfast.png', alt: 'Avocado toast with a poached egg, berries and coffee', caption: 'Breakfast, logged in one tap' },
-  { src: '/images/pamphlet-poster.jpg', alt: 'NutriSnap poster showing AI food analysis, personalised insights and the Fitness Focus section.', caption: 'AI food analysis at a glance' },
+  { photo: {'src': '/images/hero-scan.png', 'alt': 'A phone held over a salmon and quinoa bowl, showing a NutriSnap macro breakdown on screen'}, caption: 'Scan a plate in seconds' },
+  { photo: {'src': '/images/meal-breakfast.png', 'alt': 'Avocado toast with a poached egg, berries and coffee'}, caption: 'Log breakfast in one tap' },
+  { photo: {'src': '/images/pamphlet-poster.jpg', 'alt': 'NutriSnap poster showing AI food analysis, personalised insights and the Fitness Focus section.'}, caption: 'Understand what you eat' },
+  { photo: {'src': '/images/pamphlet-trifold.jpg', 'alt': 'NutriSnap tri-fold pamphlet covering what NutriSnap is, how it works, why NutriSnap, and a 14-day free trial.'}, caption: 'See the full picture' },
 ]
 
 const research = [
@@ -29,7 +30,7 @@ export default function Home() {
         <Hero />
         <Stats />
         <HowItWorks />
-        <ImageCarousel label="NutriSnap in action" slides={gallery} />
+        <PhotoRow items={gallery} />
         <Divider />
         <RealLife />
         <Testimonial />
