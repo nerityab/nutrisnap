@@ -22,12 +22,14 @@ export function Button({
 }: {
   href: string
   children: React.ReactNode
-  variant?: 'primary' | 'outline'
+  variant?: 'primary' | 'outline' | 'light'
 }) {
   const styles =
     variant === 'primary'
       ? 'bg-primary text-primary-foreground hover:opacity-90'
-      : 'border bg-card hover:bg-muted'
+      : variant === 'light'
+        ? 'bg-lime text-accent-foreground hover:opacity-90'
+        : 'border bg-card hover:bg-muted'
   return (
     <Link
       href={href}

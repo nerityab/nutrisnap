@@ -219,7 +219,7 @@ export default function PricingPage() {
               Get half price on Pro with a valid student email address. Make campus meals easier to track.
             </p>
             <div className="mt-6">
-              <Button href="/contact" variant="outline">Ask about student pricing</Button>
+              <Button href="/contact" variant="light">Ask about student pricing</Button>
             </div>
           </div>
           <div className="rounded-3xl border bg-card p-8 md:p-10">
