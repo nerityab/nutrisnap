@@ -34,6 +34,14 @@ export default function AboutPage() {
         photo is enough.
       </PageHero>
 
+      <section className="mx-auto max-w-3xl px-6 pb-16 md:pb-20">
+        <SectionHeading eyebrow="Our story" title="A simple idea, built with care.">
+          NutriSnap started from a question many of us ask every day: what is actually on my plate? Logging meals by
+          hand felt like a chore, so we set out to make understanding food as easy as taking a photo. Every feature
+          starts from that goal.
+        </SectionHeading>
+      </section>
+
       <section className="mx-auto max-w-6xl px-6 pb-16 md:pb-20">
         <SectionHeading eyebrow="Our team" title="The people behind the plate." />
         <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -66,6 +74,29 @@ export default function AboutPage() {
         large={{ src: '/images/meal-breakfast.png', alt: 'Avocado toast with a poached egg, berries and coffee' }}
         small={[{ src: '/images/hero-scan.png', alt: 'A phone held over a salmon and quinoa bowl, showing a NutriSnap macro breakdown on screen' }, { src: '/images/pamphlet-poster.jpg', alt: 'NutriSnap poster showing AI food analysis, personalised insights and the Fitness Focus section.' }]}
       />
+
+      <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+        <div className="grid gap-10 lg:grid-cols-2">
+          <div>
+            <SectionHeading eyebrow="Working with experts" title="AI gives you the numbers. A dietician helps with the plan.">
+              NutriSnap shows you what is in your food. For guidance that fits your condition, your food and your life, you
+              can connect with a qualified dietician.
+            </SectionHeading>
+            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
+              NutriSnap is a food-information tool, not a medical device. It does not diagnose, treat or cure any disease.
+              Always follow the advice of your doctor or dietician.
+            </p>
+          </div>
+          <div className="rounded-3xl border bg-card p-8">
+            <h3 className="text-xl font-bold">Our commitments</h3>
+            <ul className="mt-5 space-y-4 text-muted-foreground">
+              <li><strong className="text-foreground">Honest estimates.</strong> We tell you when a result is an estimate, and you can correct any item with a tap.</li>
+              <li><strong className="text-foreground">Your data, your choice.</strong> You can export or delete your data at any time.</li>
+              <li><strong className="text-foreground">Food as people eat it.</strong> We design for home cooking, street food and everything in between.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
       <Divider />
 

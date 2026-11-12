@@ -46,8 +46,10 @@ export default function HowItWorksPage() {
           items={[
             { href: '#steps', label: 'The five steps' },
             { href: '#tips', label: 'Pro tips' },
+            { href: '#why', label: 'Why NutriSnap' },
+            { href: '#who', label: 'Who it is for' },
             { href: '#conditions', label: 'Conditions' },
-            { href: '#faq', label: 'FAQ' },
+            { href: '/how-it-works/faq', label: 'FAQ' },
           ]}
         />
       </section>
@@ -97,6 +99,51 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
+      <section id="why" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+        <SectionHeading eyebrow="Why NutriSnap" title="Because you deserve more than numbers.">
+          Calorie counts alone do not tell the whole story. NutriSnap is designed to help you make better choices with
+          food you actually eat.
+        </SectionHeading>
+        <ul className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {[
+            ['Accurate & reliable', 'Advanced AI models for better food recognition and estimation.'],
+            ['Indian & regional food focus', 'Built for the foods people actually eat at home and out.'],
+            ['Easy & convenient', 'Snap, analyse and track in seconds, with no barcodes to find.'],
+            ['Personalised insights', 'See your calories, macros and micronutrients against your goals.'],
+            ['Expert support', 'Connect with a dietician for guidance that fits your condition and your life.'],
+          ].map(([title, body]) => (
+            <li key={title} className="rounded-3xl border bg-card p-6">
+              <h3 className="text-lg font-bold">{title}</h3>
+              <p className="mt-2 leading-relaxed text-muted-foreground">{body}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section id="who" className="bg-secondary">
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+          <SectionHeading eyebrow="Who it is for" title="Designed for every food lover.">
+            Whether you are studying, training, managing your diet or just curious about what is on your plate,
+            NutriSnap is built for you.
+          </SectionHeading>
+          <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              ['Students', 'Eat well between classes, on a student budget.'],
+              ['Fitness enthusiasts', 'Track protein and fuel your training with confidence.'],
+              ['Health-conscious consumers', 'Understand the nutrition in everyday meals.'],
+              ['People managing their diet', 'See carbs, sodium and fats at a glance.'],
+              ['Working professionals', 'Log lunch in seconds, even on a busy day.'],
+              ['Anyone curious about food', 'Learn what you eat, one photo at a time.'],
+            ].map(([title, body]) => (
+              <li key={title} className="rounded-3xl bg-card p-6">
+                <h3 className="text-lg font-bold">{title}</h3>
+                <p className="mt-2 leading-relaxed text-muted-foreground">{body}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <section id="conditions" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
         <CollapsibleGroup title="Conditions NutriSnap can help you track" items={conditions} />
         <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
@@ -111,7 +158,7 @@ export default function HowItWorksPage() {
       <section id="faq" className="mx-auto max-w-6xl px-6 pt-20">
         <SectionHeading title="Still have questions?">We&apos;ve covered the most common ones.</SectionHeading>
         <div className="mt-6">
-          <TextLink href="/faq">Read the FAQ</TextLink>
+          <TextLink href="/how-it-works/faq">Read the FAQ</TextLink>
         </div>
       </section>
     </PageShell>

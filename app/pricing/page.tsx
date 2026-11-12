@@ -167,14 +167,34 @@ export default function PricingPage() {
           ))}
         </ul>
         <p className="mt-10 flex flex-wrap items-center gap-2 text-muted-foreground">
-          Questions about billing? <TextLink href="/faq">Read the FAQ</TextLink>
+          Questions about billing? <TextLink href="/how-it-works/faq">Read the FAQ</TextLink>
+        </p>
+      </section>
+
+      <section aria-label="Which plan fits you" className="mx-auto max-w-6xl px-6 pb-16">
+        <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Which plan fits you?</h2>
+        <ul className="mt-8 grid gap-5 md:grid-cols-3">
+          {[
+            ['Start on Free', 'If you want to see how photo logging feels, the Free plan gives you three scans a day and unlimited manual logging.'],
+            ['Go Pro for your goals', 'If you track daily, want micronutrients and need an AI coach, Pro gives you unlimited scans and the full toolset.'],
+            ['Share with your household', 'If several people want to log meals, Family covers up to 5 profiles with shared recipes and kid-friendly goals.'],
+          ].map(([title, body]) => (
+            <li key={title} className="rounded-3xl border bg-card p-6">
+              <h3 className="text-lg font-bold">{title}</h3>
+              <p className="mt-2 leading-relaxed text-muted-foreground">{body}</p>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-8 leading-relaxed text-muted-foreground">
+          Not sure yet? Every paid plan includes a 14-day trial, so you can test everything before you choose. You only pick
+          a plan when the trial ends.
         </p>
       </section>
 
       <section aria-label="Plan questions" className="mx-auto max-w-6xl px-6 pb-16">
         <CollapsibleGroup title="Plan questions" items={planFaq} />
         <div className="mt-8">
-          <Button href="/faq" variant="outline">Read the full FAQ</Button>
+          <Button href="/how-it-works/faq" variant="outline">Read the full FAQ</Button>
         </div>
       </section>
 

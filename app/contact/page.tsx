@@ -36,6 +36,31 @@ export default function ContactPage() {
         </ul>
       </section>
 
+      <section aria-labelledby="who-to-contact" className="mx-auto max-w-6xl px-6 pb-16">
+        <h2 id="who-to-contact" className="text-3xl font-bold tracking-tight md:text-4xl">Who should you contact?</h2>
+        <ul className="mt-8 grid gap-5 md:grid-cols-2">
+          {[
+            ['Support', 'Trouble with your account, a scan or billing? Start with in-app chat, or email us and we will help.'],
+            ['Partnerships', 'Coaches, clinics and wellness teams can ask about client dashboards and bulk licences.'],
+            ['Press & media', 'Writing about NutriSnap? Send us your deadline and questions and we will get back to you.'],
+            ['Feedback & ideas', 'Tell us what would make NutriSnap more useful for the food you eat every day.'],
+          ].map(([title, body]) => (
+            <li key={title} className="rounded-3xl border bg-card p-6">
+              <h3 className="text-lg font-bold">{title}</h3>
+              <p className="mt-2 leading-relaxed text-muted-foreground">{body}</p>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-10 rounded-3xl bg-secondary p-8">
+          <h3 className="text-xl font-bold">What to include in your message</h3>
+          <ul className="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+            <li>Your phone model and operating system, for technical questions</li>
+            <li>The meal or screen you are asking about, described in a sentence or two</li>
+            <li>The email address linked to your account, if you have one</li>
+          </ul>
+        </div>
+      </section>
+
       <section aria-labelledby="contact-form-heading" className="mx-auto max-w-3xl px-6 pb-16">
         <h2 id="contact-form-heading" className="mb-6 text-3xl font-bold tracking-tight md:text-4xl">Write to us</h2>
         <ContactForm />
@@ -55,7 +80,7 @@ export default function ContactPage() {
           </a>
         </div>
         <p className="mt-8 flex flex-wrap items-center gap-2 text-muted-foreground">
-          Looking for a quick answer? <TextLink href="/faq">Browse the FAQ</TextLink>
+          Looking for a quick answer? <TextLink href="/how-it-works/faq">Browse the FAQ</TextLink>
         </p>
       </section>
     </PageShell>

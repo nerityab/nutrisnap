@@ -8,7 +8,7 @@ import { Logo } from './logo'
 const navLinks: { href: string; label: string; roll?: string }[] = [
   { href: '/features', label: 'Features', roll: '25bc350' },
   { href: '/how-it-works', label: 'How it works', roll: '25bc364' },
-  { href: '/faq', label: 'FAQ' },
+  { href: '/how-it-works/faq', label: 'FAQ' },
   { href: '/customer-stories', label: 'Customer stories', roll: '25bc339' },
   { href: '/pricing', label: 'Pricing', roll: '25bc355' },
   { href: '/about', label: 'About us', roll: '25bc290' },

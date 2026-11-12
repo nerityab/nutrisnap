@@ -3,7 +3,7 @@ import { SiteVideo } from '@/components/site/site-video'
 import Image from 'next/image'
 import { Initials, PageHero, PageShell } from '@/components/site/page-parts'
 import { AppDemo } from '@/components/site/app-demo'
-import { ThreeColumnBlocks, TwoColumnBlocks } from '@/components/site/blocks'
+import { Button, ThreeColumnBlocks, TwoColumnBlocks } from '@/components/site/blocks'
 import { StoriesPamphlets } from '@/components/site/pamphlets'
 
 export const metadata: Metadata = {
@@ -99,6 +99,35 @@ export default function CustomerStoriesPage() {
           { photo: { src: '/images/features-pamphlet-3.jpg', alt: 'NutriSnap green tri-fold pamphlet covering smart dining and intelligent insights.' }, title: 'Smart features', body: 'Multi-food capture, macro estimation and micronutrient tracking.' },
         ]}
       />
+
+      <section aria-labelledby="community-tips" className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+        <p className="text-sm font-semibold uppercase tracking-wider text-coral">Community tips</p>
+        <h2 id="community-tips" className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Habits that make the difference.</h2>
+        <ul className="mt-10 grid gap-5 md:grid-cols-3">
+          {[
+            ['Log the first bite', 'A photo before you eat gives the most accurate read.'],
+            ['Correct once, and it learns', 'Swap an item or nudge a portion. Each fix teaches your personal model.'],
+            ['Look at the week, not the meal', 'Trends across your week show more than any single plate.'],
+          ].map(([title, body]) => (
+            <li key={title} className="rounded-3xl border bg-card p-6">
+              <h3 className="text-lg font-bold">{title}</h3>
+              <p className="mt-2 leading-relaxed text-muted-foreground">{body}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 pb-16">
+        <div className="flex flex-col gap-6 rounded-3xl bg-primary px-8 py-12 text-primary-foreground md:flex-row md:items-center md:justify-between md:px-14">
+          <div>
+            <h2 className="text-3xl font-bold tracking-tight">Have a story to share?</h2>
+            <p className="mt-2 max-w-xl text-primary-foreground/80">
+              Tell us how NutriSnap has helped you eat with more confidence. We would love to hear from you.
+            </p>
+          </div>
+          <Button href="/contact">Get in touch</Button>
+        </div>
+      </section>
 
       <AppDemo />
 

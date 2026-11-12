@@ -105,7 +105,7 @@ const footerLinks = [
   { label: 'Features', href: '/features' },
   { label: 'The Science', href: '/how-it-works' },
   { label: 'Clinical Papers', href: '/about' },
-  { label: 'Privacy Architecture', href: '/faq' },
+  { label: 'Privacy Architecture', href: '/how-it-works/faq' },
   { label: 'Contact Lab', href: '/contact' },
 ]
 
