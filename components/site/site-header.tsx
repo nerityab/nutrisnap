@@ -33,7 +33,7 @@ export function SiteHeader() {
                       className="flex flex-col items-center leading-tight whitespace-nowrap transition-colors hover:text-foreground"
                     >
                       {link.label}
-                      {link.roll && <span className="text-xs uppercase">({link.roll})</span>}
+                      {link.roll && <span className="text-xs font-bold uppercase">({link.roll})</span>}
                     </Link>
                     <button
                       type="button"
@@ -64,7 +64,7 @@ export function SiteHeader() {
                     className="flex flex-col items-center leading-tight whitespace-nowrap transition-colors hover:text-foreground"
                   >
                     {link.label}
-                    {link.roll && <span className="text-xs uppercase">({link.roll})</span>}
+                    {link.roll && <span className="text-xs font-bold uppercase">({link.roll})</span>}
                   </Link>
                 </li>
               ),
@@ -100,7 +100,7 @@ export function SiteHeader() {
               <li key={link.href}>
                 <Link href={link.href} className="block py-1 text-muted-foreground hover:text-foreground">
                   {link.label}
-                  {'roll' in link && link.roll && <span className="ml-1 text-xs uppercase">({link.roll})</span>}
+                  {'roll' in link && link.roll && <span className="ml-1 text-xs font-bold uppercase">({link.roll})</span>}
                 </Link>
                 {link.href === '/how-it-works' &&
                   howItWorksSubLinks.map((sub) => (
