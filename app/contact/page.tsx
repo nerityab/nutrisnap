@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Building2, Clock, Mail, MessageCircle } from 'lucide-react'
 import Link from 'next/link'
 import { ContactForm } from '@/components/site/blocks'
+import { CalendarEmbed, MapEmbed, SITE_CALENDAR_ID } from '@/components/site/embeds'
 import { PageHero, PageShell, TextLink } from '@/components/site/page-parts'
 
 export const metadata: Metadata = {
@@ -88,6 +89,19 @@ export default function ContactPage() {
         <h2 id="contact-form-heading" className="mb-6 text-3xl font-bold tracking-tight md:text-4xl">Write to us</h2>
         <ContactForm />
       </section>
+
+      <section aria-labelledby="find-us" className="mx-auto max-w-6xl px-6 pb-16">
+        <h2 id="find-us" className="mb-6 text-3xl font-bold tracking-tight md:text-4xl">Find us</h2>
+        <MapEmbed query="Delhi, India" title="Map showing NutriSnap's location in Delhi" />
+      </section>
+
+      {SITE_CALENDAR_ID && (
+        <section aria-labelledby="book-call" className="mx-auto max-w-6xl px-6 pb-16">
+          <h2 id="book-call" className="mb-2 text-3xl font-bold tracking-tight md:text-4xl">Book a call</h2>
+          <p className="mb-6 leading-relaxed text-muted-foreground">Pick a time that suits you from our calendar.</p>
+          <CalendarEmbed calendarId={SITE_CALENDAR_ID} title="NutriSnap booking calendar" />
+        </section>
+      )}
 
       <section className="mx-auto max-w-6xl px-6 pb-20">
         <div className="flex flex-col gap-6 rounded-3xl bg-primary px-8 py-12 text-primary-foreground md:flex-row md:items-center md:justify-between md:px-14">

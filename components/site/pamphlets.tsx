@@ -217,3 +217,25 @@ export function HowItWorksPamphlet() {
     </section>
   )
 }
+
+export function ComparePamphlets() {
+  const pages = [
+    { src: '/images/how-it-works-compare-1.jpg', alt: 'NutriSnap pamphlet: Stop typing, start snapping, with 54% of surveyed people using no tracking app and three gaps we found.' },
+    { src: '/images/how-it-works-compare-2.jpg', alt: 'NutriSnap pamphlet: NutriSnap vs the rest, comparing logging, Indian food, nutrients, guidance and price against HealthifyMe, MyFitnessPal and Cronometer.' },
+  ]
+  return (
+    <section aria-labelledby="compare-heading" className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+      <div className="rounded-3xl border bg-card p-6 md:p-10">
+        <h2 id="compare-heading" className="text-3xl font-bold tracking-tight md:text-4xl">Stop typing, start snapping</h2>
+        <p className="mt-3 max-w-2xl leading-relaxed text-muted-foreground">
+          How NutriSnap compares with the tracking apps people already use.
+        </p>
+        <div className="mt-8 flex flex-col gap-6">
+          {pages.map((p) => (
+            <Image key={p.src} src={p.src} alt={p.alt} width={1685} height={1192} sizes="(min-width: 1152px) 1056px, 100vw" className="h-auto w-full rounded-2xl border" />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

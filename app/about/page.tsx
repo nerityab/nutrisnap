@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { SiteVideo } from '@/components/site/site-video'
 import { HeartHandshake, FlaskConical, Lock, Globe } from 'lucide-react'
 import { Divider, MosaicBlock } from '@/components/site/blocks'
+import { SITE_YOUTUBE_VIDEO_ID, YouTubeEmbed } from '@/components/site/embeds'
 import { Initials, PageHero, PageShell, SectionHeading } from '@/components/site/page-parts'
 import { AboutPamphlets } from '@/components/site/pamphlets'
 
@@ -119,6 +120,13 @@ export default function AboutPage() {
           ))}
         </ul>
       </section>
+
+      {SITE_YOUTUBE_VIDEO_ID && (
+        <section aria-labelledby="watch" className="mx-auto max-w-4xl px-6 pb-16 md:pb-20">
+          <h2 id="watch" className="mb-6 text-3xl font-bold tracking-tight md:text-4xl">Watch NutriSnap in action</h2>
+          <YouTubeEmbed videoId={SITE_YOUTUBE_VIDEO_ID} title="NutriSnap on YouTube" />
+        </section>
+      )}
 
       <section className="mx-auto max-w-6xl px-6 pb-20 md:pb-24">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr]">

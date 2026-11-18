@@ -17,7 +17,7 @@ export function Logo({ inverted = false, roll }: { inverted?: boolean; roll?: st
         <span className={cn('whitespace-nowrap', inverted ? 'text-primary-foreground' : 'text-foreground')}>
           Nutri<span className={inverted ? 'text-lime' : 'text-coral'}>Snap</span>
         </span>
-        {roll && <span className="text-xs font-normal text-muted-foreground">({roll})</span>}
+        {roll && <span className="text-xs font-normal uppercase text-muted-foreground">({roll})</span>}
       </span>
     </Link>
   )

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { SiteVideo } from '@/components/site/site-video'
 import { Button, CollapsibleGroup, HowItWorksSubnav, TableOfContents, TextWithImage } from '@/components/site/blocks'
-import { HowItWorksPamphlet } from '@/components/site/pamphlets'
+import { ComparePamphlets, HowItWorksPamphlet } from '@/components/site/pamphlets'
 import { PageHero, PageShell, SectionHeading, TextLink } from '@/components/site/page-parts'
 
 export const metadata: Metadata = {
@@ -50,6 +50,7 @@ export default function HowItWorksPage() {
             { href: '#tips', label: 'Pro tips' },
             { href: '#why', label: 'Why NutriSnap' },
             { href: '#who', label: 'Who it is for' },
+            { href: '#compare', label: 'Compare' },
             { href: '#conditions', label: 'Conditions' },
             { href: '/how-it-works/faq', label: 'FAQ' },
           ]}
@@ -164,6 +165,10 @@ export default function HowItWorksPage() {
           </ul>
         </div>
       </section>
+
+      <div id="compare">
+        <ComparePamphlets />
+      </div>
 
       <section id="conditions" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
         <CollapsibleGroup title="Conditions NutriSnap can help you track" items={conditions} />

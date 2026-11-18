@@ -33,7 +33,7 @@ export function PageHero({
   return (
     <section className="mx-auto max-w-6xl px-6 pb-12 pt-16 md:pb-16 md:pt-24">
       <Eyebrow>{eyebrow}</Eyebrow>
-      <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight text-balance md:text-6xl">{title}</h1>
+      <h1 className="mt-4 max-w-3xl text-4xl font-extrabold tracking-tight text-balance text-[#0b1a10] md:text-6xl">{title}</h1>
       <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">{children}</p>
     </section>
   )
